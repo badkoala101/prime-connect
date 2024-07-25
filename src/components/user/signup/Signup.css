@@ -1,0 +1,91 @@
+.sign-up-form {
+    max-width: 350px;
+    margin: 1.3rem auto;
+    padding: 0.1rem 2rem;
+    border-radius: 21px;
+    background-color: #e5ebf2;
+    text-align: center;
+   }
+
+.sign-up-form input[type="email"],
+.sign-up-form input[type="password"] {
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.88rem;
+}
+.sign-up-form input[type="password"]:focus, 
+.sign-up-form input[type="email"]:focus{
+  outline: 3px solid #0681fd;
+}
+  .sign-up-form .password-strength {
+    text-align: left;
+  }
+  
+  .password-strength p {
+    margin: -7px 0 -12px 0;
+    color: #f00;
+    font-size: 0.79rem;
+
+  }
+  
+  .password-strength ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .password-strength li {
+    font-size: 0.75rem;
+  }
+  
+  .password-strength .valid {
+    color: #0f0;
+  }
+  
+  .password-strength .invalid {
+    color: #f00;
+  }
+  
+  .sign-up-form .checkboxes {
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
+  
+  .sign-up-form .checkboxes label {
+    display: block;
+    margin-bottom: 0.1rem;
+    font-size: 0.75rem;
+    color: #2469b3;
+  }
+  
+  .sign-up-form button[type="submit"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #0681fd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .sign-up-form .social-signup {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #0681fd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .sign-up-form a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  

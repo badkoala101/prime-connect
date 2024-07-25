@@ -80,6 +80,10 @@ body {
   cursor: pointer;
   border-radius: 6px;
   margin-left: 1rem;
+  list-style: none;
+}
+.navbar .getstartedbtn .link{
+  text-decoration: none;
   transition: all 0.3s ease; 
 }
 
@@ -88,6 +92,7 @@ body {
   color: #fff;
   border-color: #0056b3; 
 }
+
 .navbar .signinbtn{
   padding: 0.5rem 1rem;
   border: none;
