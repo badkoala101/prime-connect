@@ -5,6 +5,10 @@ body {
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +23,19 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   color: #007bff;
+}
+.link {
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.link:visited {
+  color: inherit; 
+}
+.link:focus,
+.link:active {
+  color: inherit;
+  outline: none; 
 }
 
 .nav-links {
@@ -135,6 +152,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
   padding: 2rem;
   padding-left: 5rem;
   padding-right: 5rem;
