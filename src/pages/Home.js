@@ -1,9 +1,12 @@
 import React from 'react';
 import heroImage from '../assets/primeconnectlogo.png'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
     <div className="home">
+        <Navbar/>
           <section className="hero">
         <div className="hero-text">
           <h1>Connect with all your Coop Bank products</h1>
@@ -55,6 +58,7 @@ const Home = () => {
           <button className="btn">Submit</button>
         </form>
       </section>
+      <Footer/>
     </div>
   );
 };

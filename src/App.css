@@ -80,7 +80,12 @@ body {
   cursor: pointer;
   border-radius: 6px;
   margin-left: 1rem;
+  list-style: none;
 }
+.navbar .getstartedbtn .link{
+  text-decoration: none;
+}
+
 .navbar .signinbtn{
   padding: 0.5rem 1rem;
   border: none;
