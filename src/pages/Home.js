@@ -44,7 +44,10 @@ const Home = () => {
         </div>
       </section>
       <section className="explore">
-        <h2>Find everything you need with our extensive range of services and products</h2>
+      <div className="hero-image">
+          <img src={heroImage} alt="Hero" />
+        </div>
+        <h2>Find everything you <br/> need with our extensive<br/> range of services and<br/> products</h2>
         <button className="btn">Explore More</button>
       </section>
       <section className="contact">
