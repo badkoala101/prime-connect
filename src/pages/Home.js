@@ -1,12 +1,15 @@
 import React from 'react';
 import heroImage from '../assets/primeconnectlogo.png'
+import lock from '../assets/lock.png'
+import connect from '../assets/connect.png'
+import user from '../assets/user.png'
 
 const Home = () => {
   return (
     <div className="home">
           <section className="hero">
         <div className="hero-text">
-          <h1>Connect with all your Coop Bank products</h1>
+          <h1>Connect with all<br/> your Coop Bank<br/> products</h1>
           <button className="btn">Get Started</button>
         </div>
         <div className="hero-image">
@@ -15,14 +18,17 @@ const Home = () => {
       </section>
       <section className="features">
         <div className="feature-card">
+        <img src={lock} alt="lock" />
           <h3>Secure</h3>
           <p>The quick brown fox jumps over the lazy dog</p>
         </div>
         <div className="feature-card">
+        <img src={connect} alt="connect" />
           <h3>Connect</h3>
           <p>The quick brown fox jumps over the lazy dog</p>
         </div>
         <div className="feature-card">
+        <img src={user} alt="user" />
           <h3>Verified</h3>
           <p>The quick brown fox jumps over the lazy dog</p>
         </div>
