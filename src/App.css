@@ -1,9 +1,7 @@
-/* src/App.css */
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
 }
 
 .navbar {
@@ -11,7 +9,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #fff;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -72,7 +72,7 @@ body {
   border-radius: 6px;
   margin-left: 1rem;
 }
-.navbar .getstartedbtn{
+.navbar .getstartedbtn {
   padding: 0.5rem 1rem;
   border: solid 1px #007bff;
   background-color: transparent;
@@ -84,6 +84,13 @@ body {
 }
 .navbar .getstartedbtn .link{
   text-decoration: none;
+  transition: all 0.3s ease; 
+}
+
+.navbar .getstartedbtn:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #0056b3; 
 }
 
 .navbar .signinbtn{
@@ -104,6 +111,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   background-color: #f9f9f9;
 }
 
@@ -112,7 +121,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
@@ -150,23 +159,28 @@ body {
 
 .features {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 2rem 0;
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 
 .feature-card {
   text-align: center;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  width: 30%;
+  width: 20%;
+}
+.feature-card img{
+  height: 25px;
+  width: 25px;
+  margin-bottom: -20px;
 }
 .products {
   text-align: center;
   padding: 2rem 0;
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 .products h2 {
@@ -174,6 +188,7 @@ body {
 }
 
 .product-list {
+  background-color: #333;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -181,15 +196,20 @@ body {
 }
 
 .product-list div {
+  color: #fff;
   padding: 1rem 2rem;
-  background-color: #f4f4f4;
+  background-color: #333;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .explore {
-  text-align: center;
-  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   background-color: #f9f9f9;
 }
 
