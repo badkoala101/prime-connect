@@ -41,7 +41,7 @@ const Signup = () => {
   };
   return (
 
-    <div className='sign-up-form'>
+    <div className='sign-up-form container'>
       <Title title='Sign Up' description="Let's connect you to your favorite bank "/>
       <form onSubmit={handleSubmit}>
         <input
