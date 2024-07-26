@@ -1,11 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-import Michu from '../assets/images/michu.png';
-import Coopayroll from '../assets/images/coopayroll.png';
-import Deboo from '../assets/images/deboo.png';
-import Diasporabanking from '../assets/images/diasporaBanking.jpg';
-import Souqpass from '../assets/images/souqpass.jpg';
+import sun from '../assets/sun.png';
+import back from '../assets/back.png';
+import logout from '../assets/logout.png';
+import Michu from '../assets/michu.png';
+import Coopayroll from '../assets/coopayroll.png';
+import Deboo from '../assets/deboo.png';
+import Diasporabanking from '../assets/diasporaBanking.jpg';
+import Souqpass from '../assets/souqpass.jpg';
 import './Dashboard.css';
 
 function Dashboard({ isVisible, toggleSidebar }) {
@@ -13,7 +14,7 @@ function Dashboard({ isVisible, toggleSidebar }) {
     <section className={`content ${isVisible ? '' : 'full-width'}`}>
     {!isVisible && (
       <button className="sidebar-show-button" onClick={toggleSidebar}>
-        <FontAwesomeIcon icon={faAngleDoubleRight} />
+        <img src={back} alt='Back' />
       </button>
     )}
     <div className='content-placeholder'>

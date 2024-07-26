@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 import './App.css';
 import Signup from './components/user/signup/Signup';
+
 const App = () => {
   return (
     <Router>
