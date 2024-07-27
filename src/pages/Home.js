@@ -46,25 +46,33 @@ const Home = () => {
         </div>
       </section>
       <section className="explore">
-      <div className="hero-image">
+      <div className="hero-image2">
           <img src={heroImage} alt="Hero" />
         </div>
+        <div className="exploreword">
         <h2>Find everything you <br/> need with our extensive<br/> range of services and<br/> products</h2>
-        <button className="btn">Explore More</button>
+        <button className="explorebtn">Explore More</button>
+        </div>
       </section>
       <section className="contact">
+        <div className="contactword">
         <h2>Connect with Us</h2>
-        <p>We'd love to hear from you! Have a question about our products or services? Need help with an order?</p>
-        <p>Our friendly customer support team is here to assist you.</p>
-        <p>Phone: +251-90-000-0000</p>
-        <p>Email: info@coopbank.com</p>
-        <p>Visit us: Get House Building, Africa Ave, Addis Ababa</p>
+        <p>We'd love to hear from you!
+           Have a <br/>question about our products or services?<br/>
+            Need help with an order?<br/>
+             Our friendly customer support team is<br/> here to assist you.<br/>
+              <strong>Phone</strong>: +251-90-000-0000<br/> 
+              <strong>Email</strong>: Email: info@coopbank.com <br/>
+              <strong>Visit us</strong>: Get House Building, Africa Ave, Addis Ababa</p>
+              </div>
+        <div className="contactform">
         <form>
           <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
           <textarea placeholder="Message"></textarea>
-          <button className="btn">Submit</button>
+          <button className="submitbtn">Submit</button>
         </form>
+        </div>
       </section>
       <Footer/>
     </div>

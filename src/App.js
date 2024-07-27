@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 import './App.css';
 import Signup from './components/user/signup/Signup';
 import Forgotpsw from './components/user/forgot_psw/Forgotpsw';
 import CheckEmail from './components/user/emailcheck/CheckEmail';
 import ResetPsw from './components/user/resetpsw/ResetPsw';
 import Authentication from './components/user/authentication/Authentication';
-
-
+import Signin from './pages/Signin';
 
 const App = () => {
   return (
@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/forgotpsw" element={<Forgotpsw />} />        
           <Route path="/checkemail" element={<CheckEmail />} />    
           <Route path="/resetpsw" element={<ResetPsw />} />        
-          <Route path="/authentication" element={<Authentication/>} /> 
-        
+          <Route path="/authentication" element={<Authentication/>} />         
+          <Route path="/Signin" element={<Signin />} />
         </Routes>
 
       </div>

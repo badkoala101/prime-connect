@@ -1,0 +1,76 @@
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    transition: 0.3s ease;
+    margin-left: 250px; /* Adjusted for sidebar width */
+    position: relative;
+  }
+  
+  .content .full-width {
+    margin-left: 0;
+    transition: 0.3s ease;
+    
+  }
+  
+  .content-placeholder {
+    
+    padding: 10px;
+    
+  }
+
+  
+  .element-1{
+    display: inline;
+    margin: 150px;
+  }
+  .element-2{
+    display: inline;
+    margin: 250px 250px;
+  }
+  .
+
+  .michu {
+    margin: 10px;
+  }
+  .deboo {
+   margin: 10px;
+  }
+  .coopayroll {
+    margin: 10px;
+  }
+  .souqpass {
+    margin: 10px;
+  }
+  .diasporaBanking {
+    margin: 10px;
+  }
+  .content-placeholder button{
+    border: none;
+    cursor: pointer;
+    background-color: whitesmoke;
+    padding: 5px;
+    border-radius: 15px;
+  }
+  .content-placeholder button img{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+  }
+  
+  .content-placeholder button:hover{
+    background-color: lightgrey;
+    transition: 0.3s ease;
+  }
+
+  .sidebar-show-button {
+    position: fixed; /* Fixed position to ensure it's always visible */
+    top: 20px; /* Adjust to align with your design */
+    left: 20px; /* Adjust to align with your design */
+    background: none;
+    border: none;
+    font-size: 15px;
+    
+    z-index: 1000; /* Ensure it is above other content */
+  }
+  
