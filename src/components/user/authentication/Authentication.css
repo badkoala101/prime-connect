@@ -1,0 +1,33 @@
+  .code-input-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: -19px 0 19px 0;
+  }
+  
+  .code-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+  }
+  
+  .auth-form input {
+    padding: auto;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-top:20px ;
+  }
+  
+
+  .verify-btn:hover {
+    background-color: rgba(64, 145, 183, 0.982);;
+  }
+  
+  .auth-actions .resend-code:hover {
+    color:rgba(3, 144, 210, 0.982);;
+  }
+  
+  .auth-actions .sign-in:hover {
+    color: rgba(3, 144, 210, 0.982);;
+  }
