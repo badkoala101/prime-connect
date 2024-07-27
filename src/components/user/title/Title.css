@@ -1,9 +1,8 @@
-body{
-  text-align: center;
-}
+
 .title h2 {
     margin-bottom: 0.5rem;
-    color: #0681fd;
+    color: #007bff;
+    text-align: center;
 
   }
   
@@ -11,6 +10,6 @@ body{
     margin-bottom: 1.5rem;
     color: #666;
     font-size: 0.7rem;
-    color: #0681fd;
+    text-align: center;
 
   }

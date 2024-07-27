@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Forgotpsw.css'
 import Title from '../title/Title';
-
+import '../user.css'
 const Forgotpsw = () => {
 
     const [emailOrPhone, setEmailOrPhone] = useState('');
@@ -13,10 +13,10 @@ const Forgotpsw = () => {
     };
 
     return (
-        <div className='forgotpsw'>
-            <div className='container'>
-                <Title title="Forgot your password?" description="No worries we will send you reset instructions"/>
-                <form onSubmit={handleSubmit}>
+        <div className='container'>
+            <div className='content'>
+            <Title title="Forgot your password?" description="No worries we will send you reset instructions"/>
+            <form onSubmit={handleSubmit}>
                     <input
                         type="text"
                         placeholder="Email or Phone Number"
@@ -24,7 +24,7 @@ const Forgotpsw = () => {
                         onChange={(e) => setEmailOrPhone(e.target.value)}
                         className="input"
                     />
-                    <button type="submit" className="button">Next</button>
+                    <button type="submit" >Next</button>
                 </form>
                 <a href="/login" className="back-link">Go back to log in</a>
             </div>

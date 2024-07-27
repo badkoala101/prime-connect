@@ -279,11 +279,11 @@ body {
   border-radius: 4px;
 }
 .navbar .logo {
-  display: flex;
+   display: flex; 
   align-items: center;
 }
 
 .navbar .logo img.navbar-logo {
-  height: 40px; /* Adjust the height as needed */
-  margin-right: 10px; /* Space between the logo and text */
-}
+   height: 40px;  /* Adjust the height as needed  */
+   margin-right: 10px;  /*Space between the logo and text  */
+} 

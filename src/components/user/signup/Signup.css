@@ -1,34 +1,11 @@
-.container {
-    max-width: 350px;
-    margin: 1.3rem auto;
-    padding: 0.1rem 2rem;
-    border-radius: 21px;
-    background-color: #e5ebf2;
-    text-align: center;
-   }
-
-.container input[type="email"],
-.container input[type="password"],
-.container input[type="text"] {
-    width: calc(100% - 2rem);
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.88rem;
-}
-.container input[type="password"]:focus, 
-.container input[type="email"]:focus,
-.container input[type="text"]:focus{
-  outline: 3px solid #0681fd;
-}
-
-.sign-up-form .password-strength {
+.container .password-strength{
     text-align: left;
   }
+
+
   
 .password-strength p {
-    margin: -7px 0 -12px 0;
+    margin: -12px 0 -16px 0;
     color: #f00;
     font-size: 0.79rem;
 
@@ -42,15 +19,7 @@
 .password-strength li {
     font-size: 0.75rem;
   }
-  
-.password-strength .valid {
-    color: #0f0;
-  }
-  
-.password-strength .invalid {
-    color: #f00;
-  }
-  
+
 .sign-up-form .checkboxes {
     text-align: left;
     margin-bottom: 0.3rem;
@@ -58,23 +27,11 @@
   
 .sign-up-form .checkboxes label {
     display: block;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.04rem;
     font-size: 0.75rem;
     color: #2469b3;
   }
-  
-.container button[type="submit"] {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    background-color: #0681fd;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
+    
   .sign-up-form .social-signup {
     width: 100%;
     padding: 0.5rem;
@@ -83,12 +40,8 @@
     color: #333;
     border: 1px solid #0681fd;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     cursor: pointer;
   }
   
-.container a {
-    color: #007bff;
-    text-decoration: none;
-  }
   
