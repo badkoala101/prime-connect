@@ -38,6 +38,14 @@
   font-size: 1rem;
   cursor: pointer;
 }
+.container button[type="submit"]:hover{
+  background-color: rgba(64, 145, 183, 0.982);;
+
+  }
+.container a:hover{
+  color: rgba(64, 145, 183, 0.982);;
+
+}
 .container a {
     color: #007bff;
     text-decoration: none;
