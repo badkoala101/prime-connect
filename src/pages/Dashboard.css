@@ -14,6 +14,7 @@
   }
   
   .content-placeholder {
+    justify-content: center;
     
     padding: 10px;
     
@@ -23,16 +24,17 @@
   .element-1{
     display: inline;
     margin: 150px;
+    margin-left: 300px;
   }
   .element-2{
     display: inline;
     margin: 250px 250px;
+    margin-left: 300px;
   }
-  .
 
-  .michu {
-    margin: 10px;
-  }
+.michu{
+  margin: 10px;
+}
   .deboo {
    margin: 10px;
   }
@@ -51,6 +53,7 @@
     background-color: whitesmoke;
     padding: 5px;
     border-radius: 15px;
+
   }
   .content-placeholder button img{
     width: 200px;
@@ -62,15 +65,18 @@
     background-color: lightgrey;
     transition: 0.3s ease;
   }
-
+.sidebar-show-button img{
+  width: 20px;
+  height: 20px;
+}
   .sidebar-show-button {
-    position: fixed; /* Fixed position to ensure it's always visible */
-    top: 20px; /* Adjust to align with your design */
-    left: 20px; /* Adjust to align with your design */
+    position: fixed; 
+    top: 20px; 
+    left: 20px; 
     background: none;
     border: none;
     font-size: 15px;
     
-    z-index: 1000; /* Ensure it is above other content */
+    z-index: 1000; 
   }
   

@@ -22,6 +22,7 @@ const App = () => {
           <Route path="/resetpsw" element={<ResetPsw />} />        
           <Route path="/authentication" element={<Authentication/>} />         
           <Route path="/Signin" element={<Signin />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
 
       </div>
