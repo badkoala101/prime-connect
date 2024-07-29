@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import sun from '../assets/sun.png';
 import back from '../assets/back.png';
 import dashboard from '../assets/dashboard.jpg';
@@ -25,12 +26,12 @@ function Sidebar({ isVisible, toggleSidebar }) {
 
       </div>
       <ul className="menu">
-        <li><a className='dashboard' href='/Dashboard'><img src={dashboard} className='dashboard' alt="dashboard" /> Dashboard</a></li>
-        <li><a className='products' href='#'> <img src={product} className='product' alt="product" />Products</a></li>
-        <li><a className='notificationn' href='#'><img src={notification} className='notification' alt="notification" /> Notification</a></li>
-        <li><a className='verifyId' href='#'><img src={verify} className='verify' alt="verify" /> Verify ID</a></li>
-        <li><a className='profile' href='#'><img src={user} className='user' alt="user" /> Profile</a></li>
-        <li><a className='setting' href='#'><img src={setting} className='setting' alt='setting' /> Setting</a></li>
+        <li><Link to="/dashboard" className='dashboard'><img src={dashboard} className='dashboard' alt="Dashboard" /> Dashboard</Link></li>
+        <li><Link to="/product" className='product'><img src={product} className='product' alt="Product" /> Products</Link></li>
+        <li><Link to="/notification" className='notificationn'><img src={notification} className='notification' alt="Notification" /> Notification</Link></li>
+        <li><Link to="/verify-id" className='verifyId'><img src={verify} className='verify' alt="Verify ID" /> Verify ID</Link></li>
+        <li><Link to="/profile" className='profile'><img src={user} className='user' alt="Profile" /> Profile</Link></li>
+        <li><Link to="/setting" className='setting'><img src={setting} className='setting' alt="Setting" /> Setting</Link></li>
       </ul>
       <div className="logOut">
         <button className="btnLogout"><img src={logout} className='logout' /> Logout</button>
