@@ -5,7 +5,7 @@ const Authentication = () => {
 
   return (
     <div className="container">
-      <div className='content'>
+      <div className='Content'>
         <Title title="Authentication" description="          Please enter the verification code sent to +251*******21"/>
         <form className="auth-form">
             <div className="code-input-wrapper">

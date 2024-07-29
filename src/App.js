@@ -9,6 +9,7 @@ import CheckEmail from './components/user/emailcheck/CheckEmail';
 import ResetPsw from './components/user/resetpsw/ResetPsw';
 import Authentication from './components/user/authentication/Authentication';
 import Signin from './pages/Signin';
+import VerifyId from './pages/verifyId/VerifyId';
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
           <Route path="/resetpsw" element={<ResetPsw />} />        
           <Route path="/authentication" element={<Authentication/>} />         
           <Route path="/Signin" element={<Signin />} />
+          <Route path="/verifyid" element={<VerifyId />} />
+
         </Routes>
 
       </div>

@@ -53,7 +53,7 @@ const Signup = () => {
   return (
 
     <div className='container'>
-      <div className='sign-up-form content'>
+      <div className='sign-up-form Content'>
         <Title title='Sign Up' description="Let's connect you to your favorite bank "/>
         <form onSubmit={handleSubmit}>
           <input

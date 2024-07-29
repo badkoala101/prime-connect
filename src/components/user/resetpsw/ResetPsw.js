@@ -43,7 +43,7 @@ const ResetPsw = () => {
   
   return (
     <div className='container '>
-    <div className=" content">
+    <div className=" Content">
       < Title title="Reset password" description="Create a strong password"/>
         <div className="input-group">
           <input

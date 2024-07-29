@@ -14,7 +14,7 @@ const Forgotpsw = () => {
 
     return (
         <div className='container'>
-            <div className='content'>
+            <div className='Content'>
             <Title title="Forgot your password?" description="No worries we will send you reset instructions"/>
             <form onSubmit={handleSubmit}>
                     <input
