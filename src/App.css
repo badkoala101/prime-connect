@@ -329,6 +329,10 @@ body {
   min-height: 150px; 
   resize: vertical; 
 }
+.contactform input, textarea:focus {
+  border-color: #0c99da; 
+  outline: none; 
+}
 
 .submitbtn {
   margin-left: 0;

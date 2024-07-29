@@ -17,20 +17,20 @@ function Sidebar({ isVisible, toggleSidebar }) {
       <div className="sidebar-header">
         <a className='title' href='/'>Prime Connect</a>
         <div className="header-buttons">
-          <button className='nightmode'><img src={sun} className='sun' /></button>
+          <button className='nightmode'><img src={sun} className='sun' alt="sun" /></button>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
-            <img src={back} className='back' />
+            <img src={back} className='back' alt="back" />
           </button>
         </div>
 
       </div>
       <ul className="menu">
-        <li><a className='dashboard' href='/'><img src={dashboard} className='dashboard' /> Dashboard</a></li>
-        <li><a className='products' href='#'> <img src={product} className='product' />Products</a></li>
-        <li><a className='notificationn' href='#'><img src={notification} className='notification' /> Notification</a></li>
-        <li><a className='verifyId' href='#'><img src={verify} className='verify' /> Verify ID</a></li>
-        <li><a className='profile' href='#'><img src={user} className='user' /> Profile</a></li>
-        <li><a className='setting' href='#'><img src={setting} className='setting' /> Setting</a></li>
+        <li><a className='dashboard' href='/Dashboard'><img src={dashboard} className='dashboard' alt="dashboard" /> Dashboard</a></li>
+        <li><a className='products' href='#'> <img src={product} className='product' alt="product" />Products</a></li>
+        <li><a className='notificationn' href='#'><img src={notification} className='notification' alt="notification" /> Notification</a></li>
+        <li><a className='verifyId' href='#'><img src={verify} className='verify' alt="verify" /> Verify ID</a></li>
+        <li><a className='profile' href='#'><img src={user} className='user' alt="user" /> Profile</a></li>
+        <li><a className='setting' href='#'><img src={setting} className='setting' alt='setting' /> Setting</a></li>
       </ul>
       <div className="logOut">
         <button className="btnLogout"><img src={logout} className='logout' /> Logout</button>
