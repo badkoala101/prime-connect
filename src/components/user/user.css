@@ -39,12 +39,12 @@
   font-size: 1rem;
   cursor: pointer;
 }
-.container button[type="submit"]:hover{
-  background-color: rgba(64, 145, 183, 0.982);;
+.container button[type="submit"]:hover, .hover:hover{
+  background-color: rgba(74, 167, 249, 0.982);
 
   }
 .container a:hover{
-  color: rgba(64, 145, 183, 0.982);;
+  color: rgba(74, 167, 249, 0.982);
 
 }
 .container a {

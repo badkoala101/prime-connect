@@ -21,6 +21,18 @@
  .step img {
   width: 40px;
 } 
+.current{
+  background: #007bff;
+  border-radius: 30px;
+  padding-bottom: 3px;
+  color: #007bff;
+}
+.form-filled{
+  background-color: #74b5fb;
+  border-radius: 30px;
+  padding-bottom: 3px;
+  color: #74b5fb;
+}
  .step button{
   border: none;
   background: none;

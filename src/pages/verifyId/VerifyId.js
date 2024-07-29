@@ -12,13 +12,13 @@ const VerifyId = () => {
           <div className="tabs">  
 
               <div className="step">
-                <img className='form-filled' src={usericon} alt=''/>
-                <button className={personalDetailsfilled ? 'personaldetailsfilled':'personaldetailsnotfilled'} onClick={() => setPage(1)}>Personal Info</button>
+                <img className={page === 1 ?'current':'form-filled '} src={usericon} alt=''/>
+                <button className={page === 1 ?'current':'form-filled '} onClick={() => setPage(1)}>Personal Info</button>
               </div>
 
             <div className="step">
-              <img className='form-filled' src={usericon} alt=''/>
-              <button onClick={() => setPage(2)}>Address Info</button>              
+              <img className={page === 2 ?'current':''} src={usericon} alt=''/>
+              <button onClick={() => setPage(2)} className={page === 2 ?'current':' '}  >Address Info</button>              
             </div>
       
           </div>

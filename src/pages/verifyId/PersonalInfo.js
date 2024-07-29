@@ -66,7 +66,7 @@ const PersonalInfo = () => {
                 <option value="widowed">Widowed</option>
             </select>
         </label>
-        <button type="submit">Save changes</button>
+        <button className='hover' type="submit">Save changes</button>
     </form>
     </div>
     
