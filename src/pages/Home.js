@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/primeconnectlogo.png'
+import heroImage from '../assets/primeconnectlogo.png';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import lock from '../assets/lock.png'

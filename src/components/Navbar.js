@@ -16,8 +16,8 @@ const Navbar = () => {
         <li><Link to="/faq">FAQ</Link></li>
       </ul>
       <div>
-        <button className="getstartedbtn"> <Link className='link' to="/signup">Get Started</Link></button>
-        <button className="signinbtn"> <Link className='link' to="/Signin">Sign In</Link></button>
+      <Link to="/signup"><button className="getstartedbtn">Get Started</button></Link>
+        <Link to="/Signin"><button className="signinbtn">Sign In</button></Link>
       </div>
     </nav>
   );
