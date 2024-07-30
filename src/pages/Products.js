@@ -21,7 +21,7 @@ function Products() {
             <img src={show} className='show' />
           </button>
         )}
-        <div className='content-placeholder'>
+        <div className='products-content'>
           <div className="content-box">
             <h2>Products</h2>
             <div className="tabs">
