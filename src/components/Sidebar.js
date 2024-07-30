@@ -27,7 +27,7 @@ function Sidebar({ isVisible, toggleSidebar }) {
       </div>
       <ul className="menu">
         <li><Link to="/dashboard" className='dashboard'><img src={dashboard} className='dashboard' alt="Dashboard" /> Dashboard</Link></li>
-        <li><Link to="/product" className='product'><img src={product} className='product' alt="Product" /> Products</Link></li>
+        <li><Link to="/Products" className='product'><img src={product} className='product' alt="Product" /> Products</Link></li>
         <li><Link to="/notification" className='notificationn'><img src={notification} className='notification' alt="Notification" /> Notification</Link></li>
         <li><Link to="/verify-id" className='verifyId'><img src={verify} className='verify' alt="Verify ID" /> Verify ID</Link></li>
         <li><Link to="/profile" className='profile'><img src={user} className='user' alt="Profile" /> Profile</Link></li>

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import Products from './pages/Products';
 import './App.css';
 import Signup from './components/user/signup/Signup';
 import Forgotpsw from './components/user/forgot_psw/Forgotpsw';
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/authentication" element={<Authentication/>} />         
           <Route path="/Signin" element={<Signin />} />
           <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Products" element={<Products />} />
         </Routes>
 
       </div>
