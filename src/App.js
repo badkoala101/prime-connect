@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/resetpsw" element={<ResetPsw />} />        
           <Route path="/authentication" element={<Authentication/>} />         
           <Route path="/Signin" element={<Signin />} />
-          <Route path="/verifyid" element={<VerifyId />} 
+          <Route path="/verifyid" element={<VerifyId />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Products" element={<Products />} />
         </Routes>
