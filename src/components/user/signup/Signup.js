@@ -3,7 +3,7 @@ import './Signup.css'
 import Title from '../title/Title';
 
 const Signup = () => {
-
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -17,6 +17,9 @@ const Signup = () => {
     numberOrSymbol: false,
     minLength: false,
   });
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
      
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,8 +67,9 @@ const Signup = () => {
               onChange={handleChange}
               required
           />
-          <input
-              type="password"
+         <div className="input-group">
+         <input
+              type={showPassword ? 'text' : 'password'}
               name='password'
               placeholder="Password"
               value={password}
@@ -75,7 +79,9 @@ const Signup = () => {
               // onChange={handleChange}
               required
           />
-           
+             <button type="button" onClick={toggleShowPassword} className="show-password-button">{showPassword ? 'Hide' : 'Show'}             </button>
+
+         </div>
         {passwordTouched && (
           <div className=" password-strength ">
             <p className={passwordStrength.minLength && passwordStrength.capitalLetter && passwordStrength.numberOrSymbol ?"valid": "invalid"}>Password strength: {passwordStrength.minLength && passwordStrength.capitalLetter && passwordStrength.numberOrSymbol ? 'strong' : 'weak'}</p>
