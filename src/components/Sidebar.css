@@ -11,6 +11,8 @@
 }
 .header-buttons {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
   
@@ -19,6 +21,7 @@
     justify-content: space-between;
     padding: 1rem 0.25rem;;
     height: 5rem;
+    align-items: center;
   }
 .sidebar-header a{
    
@@ -27,7 +30,10 @@
     text-decoration: none;
     font-size: large;
   }
-  
+.sidebar-toggle{
+    margin-top: 8px;
+}  
+
 .theme-toggle, .sidebar-toggle {
     background: none;
     border: none;
@@ -39,7 +45,10 @@
     transform: translateX(-100%);
     transition: 0.3s ease;
 }
-  
+.sidebar-list-item .link.active {
+    color:rgb(2, 154, 248);
+    ;
+  } 
   
 .menu {
     list-style: none;
@@ -64,15 +73,37 @@
     display: block;
     width: 50%;
 }
-
-
+.nightmode img{
+    width: 20px;
+    height: 20px;
+    
+    
+    
+}
+.nightmode{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    margin-top: 9px;
+}
+.sidebar-toggle img{
+    width: 20px;
+    height: 20px;
+}
+.menu img{
+    width: 15px;
+    height: 15px;
+}
+.btnLogout img{
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
 
 .sidebar ul li a:hover {
     color: rgb(2, 154, 248);
 }
-.sidebar ul li .dashboard{
-    color: rgb(2, 154, 248);
-} 
  
 .logOut{
     width: 100%;
@@ -88,8 +119,13 @@
     width: 100%;
 
 }
-  
+
+.logout-img{
+    padding-right: 10px;
+}
 .btnLogout{
+    display: flex;
+    align-items: center;
     width: 98%;
     height: 2rem;
     border: none;
@@ -97,6 +133,11 @@
     cursor: pointer;
     background-color: red;
     color: white;
+    font-weight: 600;
+    justify-content: center;
+    padding-bottom: 2px;
+    
+    
 }
 .btnProfile{
     width: 98%;
@@ -121,13 +162,17 @@
     align-items: center;
   }
 .text{
-    margin: 5px ;
+    margin: 3px ;
     font-weight: 600;
     font-size: large;
     
 }
 .number{
+    margin-top: 2px;
     font-size: smaller;
+}
+.account{
+    height: 100%;
 }
 
 

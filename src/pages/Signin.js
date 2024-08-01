@@ -69,7 +69,7 @@ const SignIn = () => {
             </label>
             <a className="link" href="/forgot-password">Forgot password</a>
           </div>
-          <button type="submit" className="sign-in-button">Sign in</button>
+          <Link to="/Dashboard"><button type="submit" className="sign-in-button">Sign in</button></Link>
         </form>
         <div className="third-party-sign-in">
           <button>Sign in with Google</button>
