@@ -27,7 +27,7 @@
     
     z-index: 1000; 
   }
-  .content-box {
+  .content-box_notification{
     border: 1px dashed #9e9e9e;
     padding: 20px;
 }
@@ -37,7 +37,7 @@ h3 {
     
 }
 
-.tabs {
+.tabs_notification {
     margin: 10px 0 2px 0;
     background-color: #f3ecec;
     padding: 4px 2px;
@@ -48,7 +48,7 @@ h3 {
 
 
 
-.tab {
+.tab_notification {
   background-color: transparent;
   border: none;
   padding: 5px 20px;
@@ -58,16 +58,14 @@ h3 {
   border-radius: 10px;
 }
 
-.tab.active {
+.tab.active_notification {
   background-color: #000;
   color: #fff;
   margin-left: 5px;
 }
 
-.tab.active:hover {
-  background-color: black;
-}
-.filter {
+
+.filter_notification {
   display: flex;
   align-items: center;
   
@@ -81,7 +79,7 @@ h3 {
   justify-content: space-between;
 }
 
-.filter input {
+.filter_notification input {
   flex-grow: 1;
   padding: 10px 10px 10px 40px;
   margin-right: 10px;

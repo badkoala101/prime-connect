@@ -37,15 +37,15 @@ function Products() {
           </button>
         )}
         <div className='notifications-content'>
-            <div className="content-box">
+            <div className="content-box_notification">
                 <h3>List of Notification</h3>
-                <div className="tabs">
-                    <button className="tab active">All</button>
-                    <button className="tab">Archived</button>
-                    <button className="tab">Favorites</button>
+                <div className="tabs_notification">
+                    <button className='tab active_notification'>All</button>
+                    <button className='tab_notification'>Archived</button>
+                    <button className='tab_notification'>Favorite</button>
                     
                 </div>
-                <div className="filter">
+                <div className="filter_notification">
                     <input type="text" placeholder="Search by product" />
                     
                 </div>
