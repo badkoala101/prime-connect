@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
+import Notification from './pages/Notification';
 import './App.css';
 import Signup from './components/user/signup/Signup';
 import Forgotpsw from './components/user/forgot_psw/Forgotpsw';
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/Signin" element={<Signin />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Products" element={<Products />} />
+          <Route path="/Notification" element={<Notification />} />
         </Routes>
 
       </div>

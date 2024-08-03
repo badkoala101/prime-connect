@@ -6,7 +6,7 @@ import Coopayroll from '../assets/coopayroll.png';
 import Deboo from '../assets/deboo.png';
 import Diasporabanking from '../assets/diasporaBanking.jpg';
 import Souqpass from '../assets/souqpass.jpg';
-import show from '../assets/show.jpg';
+import show from '../assets/show.png';
 import './Dashboard.css';
 
 function Dashboard() {
