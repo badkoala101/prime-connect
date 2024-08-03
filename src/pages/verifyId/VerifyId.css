@@ -1,0 +1,84 @@
+.verifyid{
+  padding: 35px;
+}
+.verifyid-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
+  background-color: #edf3fa;
+ }
+ .tabs{
+  width: 30%;
+  min-width: 200px;
+  border-right: 1px solid rgb(211, 208, 208) ;
+  padding: 14px;
+ }
+ .step{
+  display: flex;
+  align-items: center;
+  padding: 8px;
+ }
+ .step img {
+  width: 40px;
+} 
+.current{
+  background: #007bff;
+  border-radius: 30px;
+  padding-bottom: 3px;
+  color: #007bff;
+}
+.form-filled{
+  background-color: #74b5fb;
+  border-radius: 30px;
+  padding-bottom: 3px;
+  color: #74b5fb;
+}
+ .step button{
+  border: none;
+  background: none;
+ }
+ .verify-info form{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+.verify-info form input,.verify-info form select{
+    width: 100%;
+    padding: 7px 2px;
+
+  }
+.verify-info form label:not(.address-type-duration label){
+    width: 45%;
+    margin: 10px 0px;
+
+}
+.verify-info form button{
+    padding: 8px;
+    background-color: #007bff;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    width: 30%;
+    position: relative;
+    left: 70% ;
+}
+.verify-info h2{
+  margin: 30px 25px 0px 25px;
+}
+.address-type{
+  width: 100%;
+}
+.address-type-duration, .address-type-duration label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address-type-duration p{
+  width: 30%;
+}
+
+
+
