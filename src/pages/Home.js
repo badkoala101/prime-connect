@@ -51,7 +51,7 @@ const Home = () => {
         </div>
         <div className="exploreword">
         <h2>Find everything you <br/> need with our extensive<br/> range of services and<br/> products</h2>
-        <button className="explorebtn">Explore More</button>
+       <button className="explorebtn">Explore More</button>
         </div>
       </section>
       <section className="contact">
