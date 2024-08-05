@@ -29,6 +29,7 @@ const App = () => {
           <Route path="/verifyid" element={<VerifyId />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Products" element={<Products />} />
+          <Route path="/Notification" element={<Notification />} />
           <Route exact path="/items" element={<Item />} /> 
         </Routes>
 
