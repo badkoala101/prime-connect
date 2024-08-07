@@ -2,14 +2,21 @@ import React, { useState } from 'react'
 import AddressInfo from './AddressInfo';
 import PersonalInfo from './PersonalInfo';
 import usericon from '../../assets/user.png'
+import Sidebar from '../../components/Sidebar';
 const VerifyId = () => {
     const [page, setPage] = useState(1);
-    var personalDetailsfilled=false;
+    const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
     return (
       <div className='verifyid'>
-        <h2>Identification Verification</h2>
+      <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+      <h2 className='verifyid-title'>Identification Verification</h2>
         <div className=" verifyid-content">
-          <div className="tabs">  
+          <div className="tab-menu">  
 
               <div className="step">
                 <img className={page === 1 ?'current':'form-filled '} src={usericon} alt=''/>

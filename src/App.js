@@ -11,6 +11,7 @@ import ResetPsw from './components/user/resetpsw/ResetPsw';
 import Authentication from './components/user/authentication/Authentication';
 import Signin from './pages/Signin';
 import VerifyId from './pages/verifyId/VerifyId';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
