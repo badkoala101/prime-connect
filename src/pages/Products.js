@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Sidebar from '../components/Sidebar';
-import show from '../assets/show.jpg';
+import show from '../assets/show.png';
 import './Products.css';
 import toggle from '../assets/view-toggle.png'
 

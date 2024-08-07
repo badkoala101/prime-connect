@@ -64,6 +64,8 @@
     height: 100px;
     border-radius: 15px;
   }
+
+ 
   
   .content-placeholder button:hover{
     background-color: lightgrey;
@@ -72,6 +74,7 @@
 .sidebar-show-button img{
   width: 20px;
   height: 20px;
+
 }
   .sidebar-show-button {
     position: fixed; 
@@ -80,6 +83,7 @@
     background: none;
     border: none;
     font-size: 15px;
+    margin-top: 1rem;
     
     z-index: 1000; 
   }

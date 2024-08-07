@@ -114,6 +114,10 @@
      margin-right: 10px;
 }    
 
+.sidebar-list-item .link img.icon {
+   margin-right: 5px;
+  }
+
 
 .profile{
     width: 100%;
@@ -121,7 +125,7 @@
 }
 
 .logout-img{
-    padding-right: 10px;
+   
 }
 .btnLogout{
     display: flex;
