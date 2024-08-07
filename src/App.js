@@ -12,6 +12,7 @@ import ResetPsw from './components/user/resetpsw/ResetPsw';
 import Authentication from './components/user/authentication/Authentication';
 import Signin from './pages/Signin';
 import VerifyId from './pages/verifyId/VerifyId';
+import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/authentication" element={<Authentication/>} />         
           <Route path="/Signin" element={<Signin />} />
           <Route path="/verifyid" element={<VerifyId />} />
+          <Route path="/Dashboard" element={<Dashboard />}/>
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/Notification" element={<Notification />} />

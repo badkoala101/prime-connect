@@ -1,13 +1,22 @@
+.verifyid-component{
+  display: flex;
+
+}
 .verifyid{
   padding: 35px;
+  margin-left: 250px; /* Adjusted for sidebar width */
+}
+.verifyid h2{
+  margin-top: 100px;
 }
 .verifyid-content{
   display: flex;
   justify-content: space-between;
   padding: 0 3%;
   background-color: #edf3fa;
+
  }
- .tabs{
+ .tab-menu{
   width: 30%;
   min-width: 200px;
   border-right: 1px solid rgb(211, 208, 208) ;

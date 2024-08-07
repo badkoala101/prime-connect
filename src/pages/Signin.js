@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Signin.css';
+import '../components/user/user.css'
+import Title from '../components/user/title/Title';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -31,10 +33,10 @@ const SignIn = () => {
   };
 
   return (
-    <div className="sign-in-page">
-      <div className="sign-in-container">
-        <h2 className="title">Sign In</h2>
-        <p className="des">Welcome back! Please enter your details</p>
+    <div className="sign-in-page container">
+      <div className="Content">
+        <Title title="Sign In" description="Welcome back! Please enter your details"/>
+
         <form onSubmit={handleSignIn}>
           <div className="input-group">
             <input
