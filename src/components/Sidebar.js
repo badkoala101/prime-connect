@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import sun from '../assets/sun.png';
 import back from '../assets/back.png';
 import dashboard from '../assets/dashboard.jpg';
@@ -18,7 +17,7 @@ function Sidebar({ isVisible, toggleSidebar }) {
     { id: 1, label: 'Dashboard', link: '/dashboard', icon: dashboard },
     { id: 2, label: 'Products', link: '/Products', icon: product },
     { id: 3, label: 'Notification', link: '/notification', icon: notification },
-    { id: 4, label: 'Verify ID', link: '/verify-id', icon: verify },
+    { id: 4, label: 'Verify ID', link: '/verifyid', icon: verify },
     { id: 5, label: 'Profile', link: '/profile', icon: user },
     { id: 6, label: 'Setting', link: '/setting', icon: setting },
   ];
