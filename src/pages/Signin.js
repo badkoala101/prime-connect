@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import api from '../Api'; // Import your configured axios instance
 import './Signin.css';
-import '../components/user/user.css'
+import '../components/user/user.css';
 import Title from '../components/user/title/Title';
 
 const SignIn = () => {
@@ -9,6 +10,8 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [keepSignedIn, setKeepSignedIn] = useState(false);
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -26,10 +29,22 @@ const SignIn = () => {
     setKeepSignedIn(e.target.checked);
   };
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    // Handle sign-in logic
-    console.log('Sign in with:', email, password, keepSignedIn);
+    
+    try {
+      const response = await api.post('/login', { email, password });
+      setMessage('Sign in successful!');
+      console.log(response.data);
+
+      // Optional: Store token or user data
+      // localStorage.setItem('token', response.data.token);
+
+      // Redirect to dashboard
+      navigate('/Dashboard');
+    } catch (error) {
+      setMessage('Sign in failed: ' + (error.response?.data?.error || 'Unknown error'));
+    }
   };
 
   return (
@@ -47,19 +62,19 @@ const SignIn = () => {
               required
             />
           </div>
-<div className="input-group">
-  <input
-    type={showPassword ? 'text' : 'password'}
-    placeholder="Password"
-    value={password}
-    onChange={handlePasswordChange}
-    required
-    className="password-input"
-  />
-  <button type="button" onClick={toggleShowPassword} className="show-password-button">
-    {showPassword ? 'Hide' : 'Show'}
-  </button>
-</div>
+          <div className="input-group">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+              className="password-input"
+            />
+            <button type="button" onClick={toggleShowPassword} className="show-password-button">
+              {showPassword ? 'Hide' : 'Show'}
+            </button>
+          </div>
           <div className="options">
             <label>
               <input
@@ -71,8 +86,9 @@ const SignIn = () => {
             </label>
             <a className="link" href="/forgot-password">Forgot password</a>
           </div>
-          <Link to="/Dashboard"><button type="submit" className="sign-in-button">Sign in</button></Link>
+          <button type="submit" className="sign-in-button">Sign in</button>
         </form>
+        {message && <p>{message}</p>}
         <div className="third-party-sign-in">
           <button>Sign in with Google</button>
           <button>Sign in with GitHub</button>
