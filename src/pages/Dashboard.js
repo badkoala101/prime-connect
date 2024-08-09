@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar'; 
 import Michu from '../assets/michu.png';
 import Coopayroll from '../assets/coopayroll.png';
@@ -29,7 +29,11 @@ function Dashboard() {
           <div className='content-placeholder'>
             {/* Placeholder for the main content area */}
             <div className='element-1'>
-              <button className='michu'><img src={Michu} alt='MICHU' /></button>
+            <Link to="/michu">
+  <button className='michu'>
+    <img src={Michu} alt='MICHU' />
+  </button>
+</Link>
               <button className='coopayroll'><img src={Coopayroll} alt='CooPayRoll' /></button>
               <button className='deboo'><img src={Deboo} alt='Deboo' /></button>
             </div>

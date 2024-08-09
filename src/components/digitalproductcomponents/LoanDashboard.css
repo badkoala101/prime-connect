@@ -1,0 +1,24 @@
+/* src/pages/LoanDashboard.css */
+.loan-dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .loan-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .loan-dashboard th, .loan-dashboard td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .loan-dashboard th {
+    background-color: #f4f4f4;
+  }
+  

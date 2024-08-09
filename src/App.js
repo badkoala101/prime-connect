@@ -14,6 +14,8 @@ import Signin from './pages/Signin';
 import VerifyId from './pages/verifyId/VerifyId';
 import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
+import Michu from './pages/coopproducts/Michu';
+import LoanApplication from './components/digitalproductcomponents/LoanApplication';
 
 const App = () => {
   return (
@@ -32,7 +34,9 @@ const App = () => {
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/Notification" element={<Notification />} />
-          <Route exact path="/items" element={<Item />} /> 
+          <Route exact path="/items" element={<Item />} />
+          <Route path="/michu" element={<Michu />} />
+          <Route path="/apply-loan" element={<LoanApplication />} /> 
         </Routes>
 
       </div>
