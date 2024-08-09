@@ -1,11 +1,11 @@
 .container {
-    height: 100vh;
+  height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center; 
   }
 .Content{
-  padding: 2rem;
+  padding: 0.99rem 2rem;
   border-radius: 21px;
   width: 50%;
   max-width: 385px;

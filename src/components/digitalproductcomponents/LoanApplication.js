@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../Api'; // Import your configured axios instance
+import './LoanApplication.css'
 
 const LoanApplication = () => {
   const [name, setName] = useState('');

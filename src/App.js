@@ -10,7 +10,7 @@ import Forgotpsw from './components/user/forgot_psw/Forgotpsw';
 import CheckEmail from './components/user/emailcheck/CheckEmail';
 import ResetPsw from './components/user/resetpsw/ResetPsw';
 import Authentication from './components/user/authentication/Authentication';
-import Signin from './pages/Signin';
+import Signin from './components/user/signin/Signin';
 import VerifyId from './pages/verifyId/VerifyId';
 import Sidebar from './components/Sidebar';
 import Item from './pages/Item';

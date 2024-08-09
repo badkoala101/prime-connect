@@ -1,9 +1,6 @@
 .container .password-strength{
     text-align: left;
   }
-
-
-  
 .password-strength p {
     margin: -12px 0 -16px 0;
     color: #f00;
@@ -43,5 +40,16 @@
     font-size: 0.8rem;
     cursor: pointer;
   }
+  .Content .links{
+    display: flex;
+    justify-content: center;
+  }
+  .Content .links a{
+    margin: 0 3%;
+    padding: 3px 15px;
+    border-radius: 10px;
   
-  
+  }
+.error p, .succes p{
+  text-align: center;
+}
