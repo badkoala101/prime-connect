@@ -56,7 +56,7 @@ const SignIn = () => {
           <div className="input-group">
             <input
               type="text"
-              placeholder="Email or Phone Number"
+              placeholder="Email"
               value={email}
               onChange={handleEmailChange}
               required
@@ -94,9 +94,9 @@ const SignIn = () => {
           <button>Sign in with GitHub</button>
           <button>Sign in with Facebook</button>
         </div>
-        <p>
-          Don't have an account? <Link to="/signup">Sign up</Link>
-        </p>
+        <p className="sign-up-link">
+  Don't have an account? <Link to="/signup">Sign up</Link>
+</p>
       </div>
     </div>
   );
