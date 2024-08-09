@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import api from '../Api'; // Import your configured axios instance
 import './Signin.css';
-import '../components/user/user.css';
-import Title from '../components/user/title/Title';
+import '../user.css';
+import Title from '../title/Title';
+import api from '../../../Api'; // Import your configured axios instance
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');

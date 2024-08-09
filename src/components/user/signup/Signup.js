@@ -8,7 +8,15 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [Checkboxes, setCheckboxes] = useState('');
   const [message, setMessage] = useState('');
+  const [passwordTouched, setPasswordTouched] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState({
+    capitalLetter: false,
+    numberOrSymbol: false,
+    minLength: false,
+  });    
+
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -23,11 +31,22 @@ const Signup = () => {
   };
 
   const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
     setPassword(e.target.value);
+    setPasswordStrength({
+      capitalLetter: /[A-Z]/.test(value),
+      numberOrSymbol: /[0-9!@#$%^&*]/.test(value),
+      minLength: value.length >= 8,
+    });
+    setPasswordTouched(true);
+
   };
 
   const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
+  };
+  const handleCheckboxsChange = (e) => {
+    setCheckboxes(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -54,24 +73,46 @@ const Signup = () => {
         if (data.errors) {
           setMessage(`Registration failed: ${Object.values(data.errors).join(', ')}`);
         } else {
-          setMessage('Registration successful!');
+          setMessage('Registerd successfully');
         }
       })
       .catch(error => {
-        setMessage('An error occurred during registration.');
+        setMessage('An error has occurred  during registration.');
         console.error('Error:', error);
       });
   };
-
+  if(message==='Registerd successfully'){
+    return(
+      <div className='container'>
+        <div className='Content succes'>
+          <p>{message}</p>
+          <a  href="/dashboard">Ok</a>
+        </div>
+      </div>
+    )
+  }
+  else if(message==='An error occurred during registration.'){
+    return(
+      <div className='container'>
+        <div className='Content error'>
+          <p>{message}</p>
+          <div className='links'>
+            <a  href="/signup">retry</a>
+            <a  href="/">cancel</a>            
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className='container'>
       <div className='sign-up-form Content'>
-        <Title title='Sign Up' description="Join us today!" />
+        <Title title='Sign Up' description="Let's connect you to your favorite bank" />
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Enter your name"
             value={name}
             onChange={handleNameChange}
             required
@@ -97,6 +138,17 @@ const Signup = () => {
               {showPassword ? 'Hide' : 'Show'}
             </button>
           </div>
+          {passwordTouched && (
+          <div className=" password-strength ">
+            <p className={passwordStrength.minLength && passwordStrength.capitalLetter && passwordStrength.numberOrSymbol ?"valid": "invalid"}>Password strength: {passwordStrength.minLength && passwordStrength.capitalLetter && passwordStrength.numberOrSymbol ? 'strong' : 'weak'}</p>
+              <ul>
+                <li className={passwordStrength.capitalLetter ? 'valid' : 'invalid'}>At least one capital letter</li>
+                <li className={passwordStrength.numberOrSymbol ? 'valid' : 'invalid'}>Contains a number or symbol (e.g., #, &, !, ?)</li>
+                <li className={passwordStrength.minLength ? 'valid' : 'invalid'}>At least 8 characters</li>
+              </ul>
+          </div>
+        )}
+          
           <input
             type="password"
             name="confirmPassword"
@@ -105,8 +157,44 @@ const Signup = () => {
             onChange={handleConfirmPasswordChange}
             required
           />
+           <div className="checkboxes">
+              <label>
+              <input
+                  type="checkbox"
+                  name="agreeUserPolicy"
+                  // checked={agreeUserPolicy}
+                  onChange={handleCheckboxsChange}
+                  required
+              />
+              I agree with Prime Connect's User Agreement and Privacy Policy.
+              </label>
+              <label>
+              <input
+                  type="checkbox"
+                  name="agreeTerms"
+                  // checked={agreeTerms}
+                  onChange={handleCheckboxsChange}
+                  required
+              />
+              I agree with Terms and Conditions
+              </label>
+              <label>
+              <input
+                  type="checkbox"
+                  name="notRobot"
+                  // checked={notRobot}
+                  onChange={handleCheckboxsChange}
+                  required
+              />
+              I am not a robot
+              </label>
+          </div>
           <button type="submit">Sign Up</button>
-          {message && <p>{message}</p>}
+          <hr />
+          <button className="social-signup">Sign up with Google</button>
+          <button className="social-signup">Sign up with GitHub</button>
+          <button className="social-signup">Sign up with Facebook</button>
+          <p className='backlink'>Already have an account? <a href="/signin">Sign in</a></p>
         </form>
       </div>
     </div>
