@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import LoanApplicationForm from '../../components/digitalproductcomponents/LoanApplication'; // Adjust path as needed
-import Dashboard from '../../components/digitalproductcomponents/LoanDashboard'; // Adjust path as needed
-import './Michu.css'; // Custom CSS file for Michu page
+import LoanApplicationForm from '../../components/digitalproductcomponents/LoanApplication';
+import Dashboard from '../../components/digitalproductcomponents/LoanDashboard';
+import Michuimg from '../../assets/michu.png';
+import './Michu.css';
 
 const Michu = () => {
   const [currentView, setCurrentView] = useState('description');
@@ -13,6 +14,7 @@ const Michu = () => {
   return (
     <div className="michu-container">
       <div className="michu-header">
+      <img src={Michuimg} alt='MICHU' />
         <h1>Welcome to Michu</h1>
         <p>
           Michu is a cutting-edge digital lending platform providing fast and secure
