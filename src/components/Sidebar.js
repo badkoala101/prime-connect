@@ -10,7 +10,7 @@ import setting from '../assets/setting.jpg';
 import logout from '../assets/logout.png'
 import profile from '../assets/profile-icon.png';
 import './Sidebar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Sidebar({ isVisible, toggleSidebar }) {
   const items = [
@@ -21,7 +21,11 @@ function Sidebar({ isVisible, toggleSidebar }) {
     { id: 5, label: 'Profile', link: '/profile', icon: user },
     { id: 6, label: 'Setting', link: '/setting', icon: setting },
   ];
-
+  const navigate = useNavigate();
+  const handleLogout=()=>{
+    localStorage.removeItem('token');
+    navigate('/signin');
+  }
   return (
     <div className={`sidebar ${isVisible ? 'visible' : 'hidden'}`}>
       <div className="sidebar-header">
@@ -49,7 +53,7 @@ function Sidebar({ isVisible, toggleSidebar }) {
       </ul>
       <div className="logOut">
         <button className="btnLogout">
-          <img src={logout} className="logout-img" /> Logout
+          <img src={logout} className="logout-img" onClick={handleLogout} /> Logout
         </button>
       </div>
       <div className="profile">
