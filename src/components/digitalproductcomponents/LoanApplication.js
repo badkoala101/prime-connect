@@ -1,4 +1,3 @@
-// src/pages/LoanApplication.js
 import React, { useState } from 'react';
 import api from '../../Api'; // Import your configured axios instance
 import './LoanApplication.css'
@@ -9,6 +8,8 @@ const LoanApplication = () => {
   const [address, setAddress] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [kebeleId, setKebeleId] = useState('');
+  const [bankAccount, setBankAccount] = useState(''); // New state for bank account
+  const [amount, setAmount] = useState(''); // New state for amount
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -19,7 +20,9 @@ const LoanApplication = () => {
         email,
         address,
         phone_number: phoneNumber,
-        kebele_id: kebeleId
+        kebele_id: kebeleId,
+        bank_account: bankAccount, // Include bank account in the request
+        amount, // Include amount in the request
       });
       setMessage('Application submitted successfully!');
     } catch (error) {
@@ -61,9 +64,23 @@ const LoanApplication = () => {
         />
         <input
           type="text"
-          placeholder="Kebele ID Number"
+          placeholder="National/Kebele ID Number"
           value={kebeleId}
           onChange={(e) => setKebeleId(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Your Coop Bank Account"
+          value={bankAccount}
+          onChange={(e) => setBankAccount(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Loan Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
           required
         />
         <button type="submit">Submit Application</button>
