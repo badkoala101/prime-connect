@@ -39,7 +39,7 @@ const SignIn = () => {
       console.log(response.data);
 
       // Optional: Store token or user data
-      // localStorage.setItem('token', response.data.token);
+      localStorage.setItem('token', response.data.token);
 
       // Redirect to dashboard
       navigate('/Dashboard');
