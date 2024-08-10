@@ -28,8 +28,9 @@ const App = () => {
           <Route exact path="/" element={<Home />} />      
           <Route path="/signup" element={<Signup />} />
           <Route path="/Signin" element={<Signin />} />
+          <Route path="/forgot-password" element={<Forgotpsw />} />        
+
           <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
-            <Route path="/forgotpsw" element={<Forgotpsw />} />        
             <Route path="/checkemail" element={<CheckEmail />} />    
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
