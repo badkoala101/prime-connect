@@ -52,8 +52,8 @@ function Sidebar({ isVisible, toggleSidebar }) {
         ))}
       </ul>
       <div className="logOut">
-        <button className="btnLogout">
-          <img src={logout} className="logout-img" onClick={handleLogout} /> Logout
+        <button onClick={handleLogout} className="btnLogout">
+          <img src={logout} className="logout-img"/> Logout
         </button>
       </div>
       <div className="profile">
