@@ -24,8 +24,8 @@ function Sidebar({ isVisible, toggleSidebar }) {
   const navigate = useNavigate();
   const handleLogout=()=>{
     localStorage.removeItem('token');
-    navigate('/signin');
-  }
+    navigate('/Signin');
+  };
   return (
     <div className={`sidebar ${isVisible ? 'visible' : 'hidden'}`}>
       <div className="sidebar-header">
@@ -52,8 +52,8 @@ function Sidebar({ isVisible, toggleSidebar }) {
         ))}
       </ul>
       <div className="logOut">
-        <button className="btnLogout">
-          <img src={logout} className="logout-img" onClick={handleLogout} /> Logout
+        <button onClick={handleLogout} className="btnLogout">
+          <img src={logout} className="logout-img"  /> Logout
         </button>
       </div>
       <div className="profile">
