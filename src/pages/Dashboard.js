@@ -23,7 +23,7 @@ function Dashboard() {
         <main className={`main-content ${isSidebarVisible ? '' : 'full-width'}`}>
           {!isSidebarVisible && (
             <button className="sidebar-show-button" onClick={toggleSidebar}>
-              <img src={show} className='show' />
+              <img src={show}  alt='show' className='show' />
             </button>
           )}
           <div className='content-placeholder'>
@@ -39,7 +39,7 @@ function Dashboard() {
             </div>
             <div className='element-2'>
               <button className='souqpass'><img src={Souqpass} alt='Souqpass' /></button>
-              <button className='diasporaBanking'><img src={Diasporabanking} alt='Diaspora Banking' /></button>
+              <Link to="/diaspora-banking"><button className='diasporaBanking'><img src={Diasporabanking} alt='Diaspora Banking' /></button></Link>
             </div>
           </div>
         </main>

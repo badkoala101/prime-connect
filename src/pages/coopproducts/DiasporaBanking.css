@@ -7,6 +7,27 @@
   padding: 20px;
   background-color: #f9f9f9;
 }
+.back-button {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  margin-bottom: 20px; /* Space below the button */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.diaspora-banking h1 {
+  font-size: 3em;
+  margin-bottom: 100px;
+  text-align: center;
+}
 
 .diaspora-description {
   margin-bottom: 40px;
