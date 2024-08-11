@@ -16,6 +16,7 @@ import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
 import Michu from './pages/coopproducts/Michu';
 import LoanApplication from './components/digitalproductcomponents/LoanApplication';
+import DiasporaBanking from './pages/coopproducts/Diasporabanking';
 import ProtectedRooute from './ProtectedRooute';
 
 const App = () => {
@@ -40,7 +41,8 @@ const App = () => {
             <Route path="/Notification" element={<Notification />} />
             <Route exact path="/items" element={<Item />} />
             <Route path="/michu" element={<Michu />} />
-            <Route path="/apply-loan" element={<LoanApplication />} /> 
+            <Route path="/apply-loan" element={<LoanApplication />} />
+            <Route path="/diaspora-banking" element={<DiasporaBanking />} /> 
           // </Route>
           
         </Routes>
