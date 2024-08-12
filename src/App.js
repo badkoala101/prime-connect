@@ -16,29 +16,38 @@ import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
 import Michu from './pages/coopproducts/Michu';
 import LoanApplication from './components/digitalproductcomponents/LoanApplication';
+import DiasporaBanking from './pages/coopproducts/Diasporabanking';
+import ProtectedRooute from './ProtectedRooute';
 import Product from './pages/Product';
 
 const App = () => {
+
+  const isAuthenticated=!!localStorage.getItem('token');
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />      
           <Route path="/signup" element={<Signup />} />
-          <Route path="/forgotpsw" element={<Forgotpsw />} />        
-          <Route path="/checkemail" element={<CheckEmail />} />    
-          <Route path="/resetpsw" element={<ResetPsw />} />        
-          <Route path="/authentication" element={<Authentication/>} />         
           <Route path="/Signin" element={<Signin />} />
-          <Route path="/verifyid" element={<VerifyId />} />
-          <Route path="/Dashboard" element={<Dashboard />}/>
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/Products" element={<Products />} />
-          <Route path="/Notification" element={<Notification />} />
-          <Route exact path="/items" element={<Item />} />
-          <Route path="/michu" element={<Michu />} />
-          <Route path="/apply-loan" element={<LoanApplication />} /> 
-          <Route path="/Product" element={<Product />} />
+          <Route path="/forgot-password" element={<Forgotpsw />} />        
+
+          // <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
+            <Route path="/checkemail" element={<CheckEmail />} />    
+            <Route path="/resetpsw" element={<ResetPsw />} />        
+            <Route path="/authentication" element={<Authentication/>} />         
+            <Route path="/verifyid" element={<VerifyId />} />
+            <Route path="/Dashboard" element={<Dashboard />}/>
+            <Route path="/Products" element={<Products />} />
+            <Route path="/Notification" element={<Notification />} />
+            <Route exact path="/items" element={<Item />} />
+            <Route path="/michu" element={<Michu />} />
+            <Route path="/apply-loan" element={<LoanApplication />} />
+            <Route path="/diaspora-banking" element={<DiasporaBanking />} />
+            <Route path="/product" element={<Product />} />
+
+          // </Route>
+          
         </Routes>
 
       </div>

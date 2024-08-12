@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import Michu from '../assets/michu.png';
 import Coopayroll from '../assets/coopayroll.png';
 import Deboo from '../assets/deboo.png';
@@ -11,11 +12,7 @@ import './Product.css';
 const Product = () => {
     return (
       <div>
-          <div className="products_logo">
-              <img src={icon} alt="Logo" className="icon" />
-              <a href="/">Prime Connect</a>
-              <h1>Our Products</h1>
-          </div>
+          <Navbar />
           <div className="products_container">
               <div className="items">
                   <img src={Michu} alt="Michu" />
