@@ -16,6 +16,7 @@ import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
 import Michu from './pages/coopproducts/Michu';
 import LoanApplication from './components/digitalproductcomponents/LoanApplication';
+import Product from './pages/Product';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           <Route exact path="/items" element={<Item />} />
           <Route path="/michu" element={<Michu />} />
           <Route path="/apply-loan" element={<LoanApplication />} /> 
+          <Route path="/Product" element={<Product />} />
         </Routes>
 
       </div>
