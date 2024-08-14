@@ -19,6 +19,7 @@ import LoanApplication from './components/digitalproductcomponents/LoanApplicati
 import DiasporaBanking from './pages/coopproducts/Diasporabanking';
 import ProtectedRooute from './ProtectedRooute';
 import Product from './pages/Product';
+import Faq from './pages/Faq';
 
 const App = () => {
 
@@ -30,7 +31,8 @@ const App = () => {
           <Route exact path="/" element={<Home />} />      
           <Route path="/signup" element={<Signup />} />
           <Route path="/Signin" element={<Signin />} />
-          <Route path="/forgot-password" element={<Forgotpsw />} />        
+          <Route path="/forgot-password" element={<Forgotpsw />} /> 
+          <Route path="/Faq" element={<Faq />} />     
 
           // <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
             <Route path="/checkemail" element={<CheckEmail />} />    
