@@ -129,6 +129,7 @@
 }
 
 .stats-section h2 {
+  text-align:center;
   font-size: 2.5em;
   color: #0056b3;
   margin-bottom: 20px;
@@ -176,6 +177,7 @@
 }
 
 .contact-form h2 {
+  text-align: center;
   font-size: 2.5em;
   color: #0056b3;
   margin-bottom: 20px;
