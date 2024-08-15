@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import heroImage from '../assets/primeconnectlogo.png';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,7 +13,7 @@ const Home = () => {
           <section className="hero">
         <div className="hero-text">
           <h1>Connect with all<br/> your Coop Bank<br/> products</h1>
-          <button className="btn">Get Started</button>
+          <Link to="/signup"><button className="btn">Get Started</button></Link>
         </div>
         <div className="hero-image">
           <img src={heroImage} alt="Hero" />
@@ -51,7 +52,7 @@ const Home = () => {
         </div>
         <div className="exploreword">
         <h2>Find everything you <br/> need with our extensive<br/> range of services and<br/> products</h2>
-       <button className="explorebtn">Explore More</button>
+       <Link to="/product"><button className="explorebtn">Explore More</button></Link>
         </div>
       </section>
       <section className="contact">

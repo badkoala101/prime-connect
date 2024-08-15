@@ -32,9 +32,10 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/Signin" element={<Signin />} />
           <Route path="/forgot-password" element={<Forgotpsw />} /> 
-          <Route path="/Faq" element={<Faq />} />     
+          <Route path="/Faq" element={<Faq />} />
+          <Route path="/product" element={<Product />} />     
 
-          // <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
+           {/*<Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>*/}
             <Route path="/checkemail" element={<CheckEmail />} />    
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
@@ -46,9 +47,9 @@ const App = () => {
             <Route path="/michu" element={<Michu />} />
             <Route path="/apply-loan" element={<LoanApplication />} />
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
-            <Route path="/product" element={<Product />} />
+            
 
-          // </Route>
+          {/*</Route>*/}
           
         </Routes>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.css';
 const Footer = () => {
   return (
     <footer className="footer">
@@ -23,7 +23,7 @@ const Footer = () => {
       </div>
       <div>
         <h3>Info</h3>
-        <p>FAQ</p>
+        <a href="/Faq" style={{ textDecoration: 'none', color: 'inherit' }}><p className="link">FAQ</p></a>
         <p>Documentation</p>
         <p>Sandbox</p>
       </div>
