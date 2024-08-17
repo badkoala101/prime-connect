@@ -20,6 +20,8 @@ const Signup = () => {
     numberOrSymbol: false,
     minLength: false,
   });
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -57,14 +59,17 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading spinner
 
     if (password !== confirmPassword) {
       setMessage('Passwords do not match');
+      setLoading(false); // Stop loading spinner
       return;
     }
 
     if (!checkboxes.agreeUserPolicy || !checkboxes.agreeTerms || !checkboxes.notRobot) {
       setMessage('Please agree to all the terms and conditions');
+      setLoading(false); // Stop loading spinner
       return;
     }
 
@@ -81,42 +86,28 @@ const Signup = () => {
     })
       .then(response => response.json())
       .then(data => {
+        setLoading(false); // Stop loading spinner
+
         if (data.errors) {
           setMessage(`Registration failed: ${Object.values(data.errors).join(', ')}`);
         } else {
           setMessage('Registered successfully');
           localStorage.setItem('token', data.token);
-          window.location.href = '/dashboard';
+          setShowPopup(true); // Show success popup
+
+          // After a delay, navigate to the dashboard
+          setTimeout(() => {
+            setShowPopup(false);
+            window.location.href = '/dashboard';
+          }, 2000); // Display the popup for 2 seconds
         }
       })
       .catch(error => {
+        setLoading(false); // Stop loading spinner
         setMessage('An error has occurred during registration.');
         console.error('Error:', error);
       });
   };
-
-  if (message === 'Registered successfully') {
-    return (
-      <div className='container'>
-        <div className='Content success'>
-          <p>{message}</p>
-          <a href="/dashboard">Ok</a>
-        </div>
-      </div>
-    );
-  } else if (message === 'An error occurred during registration.') {
-    return (
-      <div className='container'>
-        <div className='Content error'>
-          <p>{message}</p>
-          <div className='links'>
-            <a href="/signup">Retry</a>
-            <a href="/">Cancel</a>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className='container'>
@@ -204,7 +195,9 @@ const Signup = () => {
               I am not a robot.
             </label>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">
+            {loading ? <div className="spinner"></div> : 'Sign Up'}
+          </button>
           <hr />
           <button type="button" className="social-signup">Sign up with Google</button>
           <button type="button" className="social-signup">Sign up with GitHub</button>
@@ -212,6 +205,14 @@ const Signup = () => {
           <p className='backlink'>Already have an account? <a href="/signin">Sign in</a></p>
         </form>
       </div>
+
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h3>Signed up successfully!</h3>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
