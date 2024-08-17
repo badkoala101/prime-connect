@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../Api'; // Import your configured axios instance
-import './LoanApplication.css'
+import './LoanApplication.css';
 
 const LoanApplication = () => {
   const [name, setName] = useState('');
@@ -8,8 +8,8 @@ const LoanApplication = () => {
   const [address, setAddress] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [kebeleId, setKebeleId] = useState('');
-  const [bankAccount, setBankAccount] = useState(''); // New state for bank account
-  const [amount, setAmount] = useState(''); // New state for amount
+  const [bankAccount, setBankAccount] = useState('');
+  const [amount, setAmount] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -21,8 +21,12 @@ const LoanApplication = () => {
         address,
         phone_number: phoneNumber,
         kebele_id: kebeleId,
-        bank_account: bankAccount, // Include bank account in the request
-        amount, // Include amount in the request
+        bank_account: bankAccount,
+        amount,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
       });
       setMessage('Application submitted successfully!');
     } catch (error) {

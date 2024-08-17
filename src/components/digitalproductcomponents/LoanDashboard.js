@@ -3,14 +3,17 @@ import api from '../../Api';
 
 const LoanDashboard = () => {
   const [loanStatus, setLoanStatus] = useState([]);
-  const [error, setError] = useState(null); // State to hold error messages
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch loan status from API
     const fetchLoanStatus = async () => {
       try {
-        const response = await api.get('/loan-status');
-        if (response.status === 200) { // Check if the response status is OK
+        const response = await api.get('/loan-status', {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+        if (response.status === 200) {
           setLoanStatus(response.data);
         } else {
           throw new Error('Failed to fetch loan status');
@@ -27,7 +30,7 @@ const LoanDashboard = () => {
   return (
     <div className="loan-dashboard">
       <h2>Loan Dashboard</h2>
-      {error && <p className="error-message">{error}</p>} {/* Display error message if any */}
+      {error && <p className="error-message">{error}</p>}
       <table>
         <thead>
           <tr>
