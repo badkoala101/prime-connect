@@ -1,71 +1,80 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import api from '../Api'; 
 import Sidebar from '../components/Sidebar';
 import show from '../assets/show.png';
 import star from '../assets/star.png';
 import starblue from '../assets/starblue.png';
 import box from '../assets/export.png';
 import './Notification.css';
-import { Form } from 'react-router-dom';
 
-
-function Products() {
+const Notification = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [notifications, setNotifications] = useState([]);
+  const [error, setError] = useState(null);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
-  const originalRows = [
-    { star: star, box: box, message: "We're pleased to inform you that...", time: "Just now" },
-    { star: star, box: box, message: "We're pleased to inform you that...", time: "2 days ago" },
-    { star: starblue, box: box, message: "We're pleased to inform you that...", time: "21 Jul, 2024" },
-  ];
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      try {
+        const response = await api.get('/notifications', {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+        if (response.status === 200) {
+          setNotifications(response.data);
+        } else {
+          throw new Error('Failed to fetch notifications');
+        }
+      } catch (error) {
+        setError('Error fetching notifications: ' + (error.response?.data?.message || error.message));
+        console.error('Error fetching notifications:', error);
+      }
+    };
 
-  const duplicatedRows = [];
-  for (let i = 0; i < 3; i++) {
-    duplicatedRows.push(...originalRows);
-  }
+    fetchNotifications();
+  }, []);
 
   return (
     <div className="notifications-container">
       <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
-      <main className={`main-content ${isSidebarVisible ? '' : 'full-width'}`}>
+      <main className={isSidebarVisible ? 'main-content' : 'main-content full-width'}>
         {!isSidebarVisible && (
           <button className="sidebar-show-button" onClick={toggleSidebar}>
-            <img src={show} className='show' />
+            <img src={show} className='show' alt="Show Sidebar" />
           </button>
         )}
         <div className='notifications-content'>
             <div className="content-box_notification">
-                <h3>List of Notification</h3>
+                <h3>List of Notifications</h3>
                 <div className="tabs_notification">
                     <button className='tab active_notification'>All</button>
                     <button className='tab_notification'>Archived</button>
                     <button className='tab_notification'>Favorite</button>
-                    
                 </div>
                 <div className="filter_notification">
                     <input type="text" placeholder="Search by product" />
-                    
                 </div>
                 <div className='table'>
                     <table>
                         <tbody>
-                            {duplicatedRows.map((notification, index) => (
-                            <tr key={index}>
-                                <td><img src={notification.star} alt="star icon" /></td>
-                                <td><img src={notification.box} alt="box icon" /></td>
-                                <td>{notification.message}</td>
-                                <td>{notification.time}</td>
-                            </tr>
-                            ))}
-                            <tr>
-                                <td><img src={ star } /></td>
-                                <td><img src={ box } /></td>
-                                <td>We're pleased to inform you that...</td>
-                                <td>Just now</td>
-                            </tr>
+                            {notifications.length > 0 ? (
+                              notifications.map((notification) => (
+                                <tr key={notification.id}>
+                                    <td><img src={notification.star || star} alt="star icon" /></td>
+                                    <td><img src={notification.box || box} alt="box icon" /></td>
+                                    <td>{notification.message}</td>
+                                    <td>{notification.time}</td>
+                                </tr>
+                              ))
+                            ) : (
+                              <tr>
+                                <td colSpan="4">No notifications found.</td>
+                              </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
@@ -76,4 +85,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Notification;

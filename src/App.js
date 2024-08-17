@@ -35,7 +35,7 @@ const App = () => {
           <Route path="/Faq" element={<Faq />} />
           <Route path="/product" element={<Product />} />     
 
-           {/*<Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>*/}
+          <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
             <Route path="/checkemail" element={<CheckEmail />} />    
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
@@ -49,7 +49,7 @@ const App = () => {
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
             
 
-          {/*</Route>*/}
+          </Route>
           
         </Routes>
 
