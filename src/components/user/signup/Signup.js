@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Signup.css';
 import Title from '../title/Title';
+import google from '../../../assets/google.png';
+import github from '../../../assets/github.svg';
+import facebook from '../../../assets/facebook.png';
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -199,9 +202,9 @@ const Signup = () => {
             {loading ? <div className="spinner"></div> : 'Sign Up'}
           </button>
           <hr />
-          <button type="button" className="social-signup">Sign up with Google</button>
-          <button type="button" className="social-signup">Sign up with GitHub</button>
-          <button type="button" className="social-signup">Sign up with Facebook</button>
+          <button type="button" className="social-signup">Sign up with Google <img src={google} className="socialicons" alt="google" /></button>
+          <button type="button" className="social-signup">Sign up with GitHub <img src={github} className="socialicons" alt="github" /></button>
+          <button type="button" className="social-signup">Sign up with Facebook <img src={facebook} className="socialicons" alt="facebook" /></button>
           <p className='backlink'>Already have an account? <a href="/signin">Sign in</a></p>
         </form>
       </div>
