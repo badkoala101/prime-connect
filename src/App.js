@@ -20,6 +20,7 @@ import DiasporaBanking from './pages/coopproducts/Diasporabanking';
 import ProtectedRooute from './ProtectedRooute';
 import Product from './pages/Product';
 import Faq from './pages/Faq';
+import Documentation from './pages/Documentation';
 
 const App = () => {
 
@@ -33,14 +34,15 @@ const App = () => {
           <Route path="/Signin" element={<Signin />} />
           <Route path="/forgot-password" element={<Forgotpsw />} /> 
           <Route path="/Faq" element={<Faq />} />
-          <Route path="/product" element={<Product />} />     
+          <Route path="/product" element={<Product />} />
+          <Route path="/Documentation" element={<Documentation />}/>     
 
           <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
             <Route path="/checkemail" element={<CheckEmail />} />    
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
             <Route path="/verifyid" element={<VerifyId />} />
-            <Route path="/Dashboard" element={<Dashboard />}/>
+            <Route path="/Dashboard" element={<Dashboard />}/>     
             <Route path="/Products" element={<Products />} />
             <Route path="/Notification" element={<Notification />} />
             <Route exact path="/items" element={<Item />} />
