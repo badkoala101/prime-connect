@@ -21,6 +21,7 @@ import ProtectedRooute from './ProtectedRooute';
 import Product from './pages/Product';
 import Faq from './pages/Faq';
 import Documentation from './pages/Documentation';
+import Profile from './pages/Profile';
 
 const App = () => {
 
@@ -49,7 +50,7 @@ const App = () => {
             <Route path="/michu" element={<Michu />} />
             <Route path="/apply-loan" element={<LoanApplication />} />
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
-            
+            <Route path="/profile" element={<Profile />} />
 
           {/* </Route> */}
           
