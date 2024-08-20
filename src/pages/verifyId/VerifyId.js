@@ -13,6 +13,10 @@ const VerifyId = () => {
         setIsSidebarVisible(!isSidebarVisible);
     };
 
+    const handlePageChange = (newPage) => {
+        setPage(newPage);
+    };
+
     return (
         <div className='verifyid'>
             <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
@@ -35,7 +39,7 @@ const VerifyId = () => {
                         <button onClick={() => setPage(2)} className={page === 2 ? 'current' : ''}>Address Info</button>
                     </div>
                 </div>
-                {page === 1 ? <PersonalInfo /> : <AddressInfo />}
+                {page === 1 ? <PersonalInfo onNext={() => handlePageChange(2)} /> : <AddressInfo />}
             </div>
         </div>
     );

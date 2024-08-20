@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import api from '../../Api'; // Ensure you have the correct import for your Axios instance
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import api from '../../Api'; 
 import './VerifyId.css';
 
 const AddressInfo = () => {
@@ -15,6 +16,27 @@ const AddressInfo = () => {
         address_type: 'commercial',
         address_duration: 'permanent'
     });
+
+    const navigate = useNavigate(); // Hook to manage navigation
+
+    useEffect(() => {
+        const checkIfSubmitted = async () => {
+            try {
+                const response = await api.get('/user-info', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    },
+                });
+                if (response.data.address_info) {
+                    navigate('/profile'); // Redirect to profile if address info is already submitted
+                }
+            } catch (error) {
+                console.error('Error checking submission status:', error.response?.data?.message || error.message);
+            }
+        };
+
+        checkIfSubmitted();
+    }, [navigate]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,6 +56,7 @@ const AddressInfo = () => {
             });
             if (response.status === 200) {
                 console.log('Address details saved successfully:', response.data);
+                navigate('/profile'); // Redirect to profile page after successful submission
             } else {
                 console.error('Failed to save address details:', response.statusText);
             }
@@ -71,7 +94,7 @@ const AddressInfo = () => {
                     <input type="text" name="street_address" value={addressDetails.street_address} onChange={handleChange} />
                 </label>
                 <div className='address-type'>
-                    <div className="address-type-duration ">
+                    <div className="address-type-duration">
                         <p>Address Type</p>
                         <label>Commercial
                             <input type="radio" name="address_type" value="commercial" checked={addressDetails.address_type === 'commercial'} onChange={handleChange} />
@@ -80,7 +103,7 @@ const AddressInfo = () => {
                             <input type="radio" name="address_type" value="residential" checked={addressDetails.address_type === 'residential'} onChange={handleChange} />
                         </label>
                     </div>
-                    <div className="address-type-duration ">
+                    <div className="address-type-duration">
                         <p>Address Duration</p>
                         <label>Permanent
                             <input type="radio" name="address_duration" value="permanent" checked={addressDetails.address_duration === 'permanent'} onChange={handleChange} />

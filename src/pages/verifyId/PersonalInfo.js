@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../../Api'; // Ensure you have the correct import for your Axios instance
 import './VerifyId.css';
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ onNext }) => {
     const [personalDetails, setPersonalDetails] = useState({
-        first_name: '', // Adjusted to match backend expectations
+        first_name: '',
         middle_name: '',
         last_name: '',
         gender: '',
@@ -12,6 +12,25 @@ const PersonalInfo = () => {
         marital_status: ''
     });
     const [personalDetailsFilled, setPersonalDetailsFilled] = useState(false);
+
+    useEffect(() => {
+        const checkIfSubmitted = async () => {
+            try {
+                const response = await api.get('/user-info', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    },
+                });
+                if (response.data.personal_info) {
+                    onNext(); // Trigger page change if personal info is already submitted
+                }
+            } catch (error) {
+                console.error('Error checking submission status:', error.response?.data?.message || error.message);
+            }
+        };
+
+        checkIfSubmitted();
+    }, [onNext]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,6 +51,7 @@ const PersonalInfo = () => {
             if (response.status === 200) {
                 setPersonalDetailsFilled(true);
                 console.log('Personal details saved successfully:', response.data);
+                onNext(); // Trigger page change after successful submission
             } else {
                 console.error('Failed to save personal details:', response.statusText);
             }
@@ -79,7 +99,7 @@ const PersonalInfo = () => {
                         <option value="widowed">Widowed</option>
                     </select>
                 </label>
-                <button className='hover' type="submit">Save changes</button>
+                <button className='hover' type="submit">Next</button> {/* Renamed button to 'Next' */}
             </form>
         </div>
     );
