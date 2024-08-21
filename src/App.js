@@ -22,6 +22,7 @@ import Product from './pages/Product';
 import Faq from './pages/Faq';
 import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
+import Sandbox from './pages/sandbox';
 
 const App = () => {
 
@@ -36,7 +37,8 @@ const App = () => {
           <Route path="/forgot-password" element={<Forgotpsw />} /> 
           <Route path="/Faq" element={<Faq />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/Documentation" element={<Documentation />}/>     
+          <Route path="/Documentation" element={<Documentation />}/>  
+          <Route path="/Sandbox" element={<Sandbox />} />   
 
           <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
             <Route path="/checkemail" element={<CheckEmail />} />    
