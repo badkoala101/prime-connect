@@ -17,26 +17,11 @@ const AddressInfo = () => {
         address_duration: 'permanent'
     });
 
-    const navigate = useNavigate(); // Hook to manage navigation
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const checkIfSubmitted = async () => {
-            try {
-                const response = await api.get('/user-info', {
-                    headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    },
-                });
-                if (response.data.address_info) {
-                    navigate('/profile'); // Redirect to profile if address info is already submitted
-                }
-            } catch (error) {
-                console.error('Error checking submission status:', error.response?.data?.message || error.message);
-            }
-        };
-
-        checkIfSubmitted();
-    }, [navigate]);
+        // Removed automatic redirect logic from useEffect
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -56,7 +41,7 @@ const AddressInfo = () => {
             });
             if (response.status === 200) {
                 console.log('Address details saved successfully:', response.data);
-                navigate('/profile'); // Redirect to profile page after successful submission
+                navigate('/profile'); // Redirect only after successful submission
             } else {
                 console.error('Failed to save address details:', response.statusText);
             }
@@ -96,20 +81,48 @@ const AddressInfo = () => {
                 <div className='address-type'>
                     <div className="address-type-duration">
                         <p>Address Type</p>
-                        <label>Commercial
-                            <input type="radio" name="address_type" value="commercial" checked={addressDetails.address_type === 'commercial'} onChange={handleChange} />
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="address_type" 
+                                value="commercial" 
+                                checked={addressDetails.address_type === 'commercial'} 
+                                onChange={handleChange} 
+                            />
+                            Commercial
                         </label>
-                        <label>Residential
-                            <input type="radio" name="address_type" value="residential" checked={addressDetails.address_type === 'residential'} onChange={handleChange} />
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="address_type" 
+                                value="residential" 
+                                checked={addressDetails.address_type === 'residential'} 
+                                onChange={handleChange} 
+                            />
+                            Residential
                         </label>
                     </div>
                     <div className="address-type-duration">
                         <p>Address Duration</p>
-                        <label>Permanent
-                            <input type="radio" name="address_duration" value="permanent" checked={addressDetails.address_duration === 'permanent'} onChange={handleChange} />
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="address_duration" 
+                                value="permanent" 
+                                checked={addressDetails.address_duration === 'permanent'} 
+                                onChange={handleChange} 
+                            />
+                            Permanent
                         </label>
-                        <label>Temporary
-                            <input type="radio" name="address_duration" value="temporary" checked={addressDetails.address_duration === 'temporary'} onChange={handleChange} />
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="address_duration" 
+                                value="temporary" 
+                                checked={addressDetails.address_duration === 'temporary'} 
+                                onChange={handleChange} 
+                            />
+                            Temporary
                         </label>
                     </div>
                 </div>

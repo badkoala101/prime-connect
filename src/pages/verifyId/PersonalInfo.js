@@ -11,7 +11,6 @@ const PersonalInfo = ({ onNext }) => {
         birth_date: '',
         marital_status: ''
     });
-    const [personalDetailsFilled, setPersonalDetailsFilled] = useState(false);
 
     useEffect(() => {
         const checkIfSubmitted = async () => {
@@ -22,7 +21,7 @@ const PersonalInfo = ({ onNext }) => {
                     },
                 });
                 if (response.data.personal_info) {
-                    onNext(); // Trigger page change if personal info is already submitted
+                    // Removed onNext() call to prevent automatic redirection
                 }
             } catch (error) {
                 console.error('Error checking submission status:', error.response?.data?.message || error.message);
@@ -30,7 +29,7 @@ const PersonalInfo = ({ onNext }) => {
         };
 
         checkIfSubmitted();
-    }, [onNext]);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -49,7 +48,6 @@ const PersonalInfo = ({ onNext }) => {
                 }
             });
             if (response.status === 200) {
-                setPersonalDetailsFilled(true);
                 console.log('Personal details saved successfully:', response.data);
                 onNext(); // Trigger page change after successful submission
             } else {
@@ -99,7 +97,7 @@ const PersonalInfo = ({ onNext }) => {
                         <option value="widowed">Widowed</option>
                     </select>
                 </label>
-                <button className='hover' type="submit">Next</button> {/* Renamed button to 'Next' */}
+                <button className='hover' type="submit">Next</button>
             </form>
         </div>
     );
