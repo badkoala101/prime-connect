@@ -60,7 +60,3 @@
   transition: 0.3s ease;
 }
 
-.items:hover::after{
-  box-shadow: none;
-  transition: 0.3s ease;
-}

@@ -17,33 +17,41 @@ function Dashboard() {
   };
 
   return (
-    <div className='content-box_dashboard'>
-      <div className="dashboard-container">
-        <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
-        <main className={`main-content ${isSidebarVisible ? '' : 'full-width'}`}>
-          {!isSidebarVisible && (
-            <button className="sidebar-show-button" onClick={toggleSidebar}>
-              <img src={show}  alt='show' className='show' />
-            </button>
-          )}
-          <div className='content-placeholder'>
-            {/* Placeholder for the main content area */}
-            <div className='element-1'>
+    <div className='dashboard-container'>
+      <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+      <main className={`main-content ${isSidebarVisible ? '' : 'full-width'}`}>
+        {!isSidebarVisible && (
+          <button className="sidebar-show-button" onClick={toggleSidebar}>
+            <img src={show} alt='show' className='show' />
+          </button>
+        )}
+        <div className='content-placeholder'>
+          {/* Placeholder for the main content area */}
+          <div className='element-1'>
             <Link to="/michu">
-  <button className='michu'>
-    <img src={Michu} alt='MICHU' />
-  </button>
-</Link>
-              <button className='coopayroll'><img src={Coopayroll} alt='CooPayRoll' /></button>
-              <button className='deboo'><img src={Deboo} alt='Deboo' /></button>
-            </div>
-            <div className='element-2'>
-              <button className='souqpass'><img src={Souqpass} alt='Souqpass' /></button>
-              <Link to="/diaspora-banking"><button className='diasporaBanking'><img src={Diasporabanking} alt='Diaspora Banking' /></button></Link>
-            </div>
+              <button className='michu'>
+                <img src={Michu} alt='MICHU' />
+              </button>
+            </Link>
+            <button className='coopayroll'>
+              <img src={Coopayroll} alt='CooPayRoll' />
+            </button>
+            <button className='deboo'>
+              <img src={Deboo} alt='Deboo' />
+            </button>
           </div>
-        </main>
-      </div>
+          <div className='element-2'>
+            <button className='souqpass'>
+              <img src={Souqpass} alt='Souqpass' />
+            </button>
+            <Link to="/diaspora-banking">
+              <button className='diasporaBanking'>
+                <img src={Diasporabanking} alt='Diaspora Banking' />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

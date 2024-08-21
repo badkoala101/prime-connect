@@ -3,13 +3,22 @@
     padding: 20px;
     background-color: white;
     transition: 0.3s ease;
-    margin-left: 250px;
+    
   }
   
   .products-content .full-width {
     margin-left: 0;
     transition: 0.3s ease;
 
+  }
+  .main-content {
+    flex-grow: 1;
+      margin-left: 250px; /* Adjust based on your sidebar width */
+      padding: 20px;
+      background-color: white;
+      transition: margin-left 0.3s ease;
+      overflow-y: auto;
+    
   }
 .sidebar-show-button img{
   width: 20px;

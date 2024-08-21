@@ -230,7 +230,17 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   width: 20%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.feature-card:hover {
+  
+  transform: translateY(-10px); /* Makes the card float upwards */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Deepens the shadow */
+  
+  
+}
+
 .feature-card img{
   height: 25px;
   width: 25px;
@@ -367,6 +377,10 @@ body {
 
 .footer p {
   margin: 0.5rem 0;
+}
+.footer p:hover{
+  color: #007bff;
+  transition: 0.2s ease;
 }
 
 .footer input {

@@ -14,6 +14,7 @@ const Product = () => {
       <div>
           <Navbar />
           <div className="products_container">
+            <section className='product_michu'>
               <div className="items">
                   <img src={Michu} alt="Michu" />
                   <h2>MICHU</h2>
@@ -22,6 +23,8 @@ const Product = () => {
                     <Link to="/signup"><button className='item-btn'>Explore</button></Link>
                   </div>
               </div>
+              </section>
+              <section className='product_coopayroll'>
               <div className="items">
                   <img src={Coopayroll} alt="Coopayroll" />
                   <h2>CooPayRoll</h2>
@@ -30,14 +33,17 @@ const Product = () => {
                   <Link to="/signup"><button className='item-btn'>Explore</button></Link>
                   </div>
               </div>
-              <div className="items">
-                  <img src={Deboo} alt="Deboo" />
-                  <h2>Deboo</h2>
-                  <p>The Deboo Crowdfunding System is a web-based platform offered by Cooperative Bank of Oromia. It enables individuals and organizations to create fundraising campaigns and receive contributions from a large number of people to support their projects, causes, or initiatives.</p>
-                  <div className="item-button">
-                  <Link to="/signup"><button className='item-btn'>Explore</button></Link>
-                  </div>
-              </div>
+            
+              </section>
+              <section className='product_deboo'>
+                <div className="items">
+                    <img src={Deboo} alt="Deboo" />
+                    <h2>Deboo</h2>
+                    <p>The Deboo Crowdfunding System is a web-based platform offered by Cooperative Bank of Oromia. It enables individuals and organizations to create fundraising campaigns and receive contributions from a large number of people to support their projects, causes, or initiatives.</p>
+                    <Link to="/signup"><button className='item-btn' >Explore</button></Link>
+                </div>
+              </section>
+              <section className='product_souqpass'>
               <div className="items">
                   <img src={Souqpass} alt="Souqpass" />
                   <h2>Souqpass</h2>
@@ -46,6 +52,8 @@ const Product = () => {
                   <Link to="/signup"><button className='item-btn'>Explore</button></Link>
                   </div>
               </div>
+              </section>
+              <section className='product_diaspora'>
               <div className="items">
                   <img src={Diasporabanking} alt="Diaspora Banking" />
                   <h2>Diaspora Banking</h2> 
@@ -54,6 +62,7 @@ const Product = () => {
                   <Link to="/signup"><button className='item-btn'>Explore</button></Link>
                   </div>
               </div>
+              </section>
           </div>
       </div>
     );
