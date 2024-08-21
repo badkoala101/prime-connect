@@ -3,9 +3,10 @@ import sun from '../../assets/sun.png';
 import back from '../../assets/back.png';
 import manageUsersIcon from '../../assets/profile-icon.png';
 import michuIcon from '../../assets/michu.png';
-import dropdownIcon from '../../assets/view-toggle.png'; // Add dropdown icon
+import dropdownIcon from '../../assets/view-toggle.png'; 
 import logout from '../../assets/logout.png';
 import profile from '../../assets/profile-icon.png';
+import dashboard from '../../assets/dashboard.jpg';
 import './AdminSidebar.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -41,6 +42,10 @@ function AdminSidebar({ isVisible, toggleSidebar }) {
       </div>
       <ul className="menu">
         <li className="sidebar-list-item">
+          <NavLink to="/admin" className="link">
+            <img src={dashboard} className="icon" alt="Dashboard" />
+            Dashboard
+          </NavLink>
           <NavLink to="/manage-users" className="link">
             <img src={manageUsersIcon} className="icon" alt="Manage Users" />
             Manage Users
@@ -49,7 +54,7 @@ function AdminSidebar({ isVisible, toggleSidebar }) {
         <li className="sidebar-list-item" onMouseEnter={toggleMichuDropdown} onMouseLeave={toggleMichuDropdown}>
           <div className="link">
             <img src={michuIcon} className="icon" alt="Michu" />
-            Michu <img src={dropdownIcon} className="dropdown-icon" alt="dropdown" /> {/* Add dropdown icon */}
+            Michu <img src={dropdownIcon} className="dropdown-icon" alt="dropdown" />
           </div>
           {isMichuDropdownVisible && (
             <ul className="dropdown-menu">
