@@ -40,6 +40,7 @@ const App = () => {
           <Route path="/Faq" element={<Faq />} />
           <Route path="/product" element={<Product />} />
           <Route path="/Documentation" element={<Documentation />}/>     
+          <Route path="/admin" element={<AdminDashboard />}/>     
 
           <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
             <Route path="/checkemail" element={<CheckEmail />} />    
