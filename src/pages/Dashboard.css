@@ -42,33 +42,27 @@
   background-color: white;
   border: 1px dashed #9e9e9e;
   height: 100vh;
-  border-radius: 5px;
+  margin: 20px;
+ 
 }
 
-.element-1, .element-2 {
-  display: flex;
-  justify-content: center;
-  margin: 20px; /* Adjust margin for better spacing */
-}
 
-.content-placeholder button {
-  border: none;
-  cursor: pointer;
-  background-color: whitesmoke;
-  
+
+
+
+.content-placeholder img {
+  width: 250px;
+  height: 150px;
   border-radius: 15px;
-  margin: 10px;
+  margin: 25px;
+  border: 1px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content-placeholder button img {
-  width: 300px;
-  height: 200px;
-  border-radius: 15px;
-}
+.content-placeholder img:hover {
+  box-shadow: 0 0 10px #007bff;
+  transform: translateY(-10px);
 
-.content-placeholder button:hover {
-  box-shadow: 0 0 10px lightgrey;
-  transition: 0.3s ease;
 }
 
 /* Sidebar toggle button */

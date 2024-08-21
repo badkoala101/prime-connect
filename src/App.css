@@ -6,6 +6,7 @@ body {
 
 .navbar {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
@@ -186,18 +187,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .hero-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  box-shadow: 0 0 10px #007bff;
 
 }
-.hero-image img:hover {
-  transform: rotate(-30deg)
 
-}
 .hero-image2 {
   flex: 1;
   display: flex;
@@ -206,15 +206,12 @@ body {
 }
 
 .hero-image2 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 80%;
+  height: 100;
   border-radius: 8px;
 
 }
-.hero-image2 img:hover {
-  transform: rotate(-30deg)
 
-}
 
 .features {
   display: flex;
@@ -406,3 +403,21 @@ body {
    height: 40px;  /* Adjust the height as needed  */
    margin-right: 10px;  /*Space between the logo and text  */
 } 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float {
+  position: relative; /* or absolute if you need precise positioning */
+  z-index: 1; /* Lower z-index to keep it behind the navbar */
+  animation: float 3s ease-in-out infinite;
+}
+

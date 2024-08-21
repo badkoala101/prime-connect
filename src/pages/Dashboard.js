@@ -27,29 +27,28 @@ function Dashboard() {
         )}
         <div className='content-placeholder'>
           {/* Placeholder for the main content area */}
-          <div className='element-1'>
+          
             <Link to="/michu">
-              <button className='michu'>
+              
                 <img src={Michu} alt='MICHU' />
-              </button>
+              
             </Link>
-            <button className='coopayroll'>
+            
               <img src={Coopayroll} alt='CooPayRoll' />
-            </button>
-            <button className='deboo'>
+           
+            
               <img src={Deboo} alt='Deboo' />
-            </button>
-          </div>
-          <div className='element-2'>
-            <button className='souqpass'>
+            
+       
+            
               <img src={Souqpass} alt='Souqpass' />
-            </button>
+            
             <Link to="/diaspora-banking">
-              <button className='diasporaBanking'>
+              
                 <img src={Diasporabanking} alt='Diaspora Banking' />
-              </button>
+             
             </Link>
-          </div>
+          
         </div>
       </main>
     </div>
