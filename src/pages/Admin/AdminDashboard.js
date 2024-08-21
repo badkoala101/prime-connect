@@ -1,81 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import UserForm from './UserForm';
-import AddressForm from './AddressForm';
-import './AdminDashboard.css'; // Include your CSS file
+import React, { useEffect, useState } from 'react';
+import api from '../../Api'; // Assuming you have an axios instance named api
+import AdminSidebar from './../../components/admin/AdminSidebar';
+import showIcon from '../../assets/show.png'; // Show icon for sidebar toggle
+import './AdminDashboard.css';
 
 function AdminDashboard() {
-  const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [isFormVisible, setIsFormVisible] = useState(false);
+    const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('/api/users');
-        setUsers(response.data);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
+    useEffect(() => {
+        api.get('/admin/users')
+            .then(response => {
+                setUsers(response.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('There was an error fetching the users!', error);
+                setLoading(false);
+            });
+    }, []);
+
+    const toggleSidebar = () => {
+        setIsSidebarVisible(!isSidebarVisible);
     };
-    fetchUsers();
-  }, []);
 
-  const handleEdit = (user) => {
-    setSelectedUser(user);
-    setIsFormVisible(true);
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`/api/users/${id}`);
-      setUsers(users.filter(user => user.id !== id));
-    } catch (error) {
-      console.error('Error deleting user:', error);
+    if (loading) {
+        return <div className="loading-indicator">Loading...</div>;
     }
-  };
 
-  return (
-    <div className="profile-container">
-      <div className="profile-main-content">
-        <div className="profile-content">
-          <h1 className="profile-heading">Admin Dashboard</h1>
-          <div className="profile-section">
-            <h2 className="profile-section-heading">Users</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {users.map(user => (
-                  <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>
-                      <button onClick={() => handleEdit(user)}>Edit</button>
-                      <button onClick={() => handleDelete(user.id)}>Delete</button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          {isFormVisible && (
-            <>
-              <UserForm user={selectedUser} />
-              <AddressForm userId={selectedUser?.id} />
-            </>
-          )}
+    return (
+        <div className={`admin-dashboard-container ${isSidebarVisible ? 'sidebar-visible' : ''}`}>
+            <button className={`show-sidebar-btn ${isSidebarVisible ? 'hidden' : ''}`} onClick={toggleSidebar}>
+                <img src={showIcon} alt="Show Sidebar" />
+            </button>
+            <AdminSidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+            <div className="admin-main-content">
+                <h2 className="admin-heading">User Management</h2>
+                <div className="admin-cube-container">
+                    <div className="admin-cube">
+                        <p>View Users</p>
+                    </div>
+                    <div className="admin-cube">
+                        <p>Add User</p>
+                    </div>
+                    <div className="admin-cube">
+                        <p>Edit User</p>
+                    </div>
+                    <div className="admin-cube">
+                        <p>Delete User</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default AdminDashboard;

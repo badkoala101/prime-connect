@@ -20,6 +20,8 @@ import Product from './pages/Product';
 import Faq from './pages/Faq';
 import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+
 import MichuHome from './pages/coopproducts/Michu/MichuHome';
 import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
 import MichuLoan from './pages/coopproducts/Michu/MichuLoan';
@@ -39,7 +41,7 @@ const App = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/Documentation" element={<Documentation />}/>     
 
-          {/* <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}> */}
+          <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
             <Route path="/checkemail" element={<CheckEmail />} />    
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
@@ -56,7 +58,7 @@ const App = () => {
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
             <Route path="/profile" element={<Profile />} />
 
-          {/* </Route> */}
+           </Route> 
           
           
 
