@@ -22,6 +22,10 @@ import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminLogin from './pages/Admin/AdminLogin';
+import ViewUsers from './pages/Admin/ViewUsers';
+import AddUser from './pages/Admin/AddUsers';
+import EditUser from './pages/Admin/EditUsers';
+
 
 import MichuHome from './pages/coopproducts/Michu/MichuHome';
 import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
@@ -65,6 +69,8 @@ const App = () => {
           {/* Admin Routes (Protected) */}
           <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}>
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/viewusers" element={<ViewUsers />} />
+            
           </Route>
         </Routes>
       </div>

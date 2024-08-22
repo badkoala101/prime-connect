@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../Api'; 
 import AdminSidebar from './../../components/admin/AdminSidebar';
 import showIcon from '../../assets/show.png'; 
@@ -47,9 +48,10 @@ function AdminDashboard() {
             <div className="admin-main-content">
                 <h2 className="admin-heading">User Management</h2>
                 <div className="admin-cube-container">
-                    <div className="admin-cube">
+                    <Link to="/viewusers"><div className="admin-cube">
                         <p>View Users</p>
                     </div>
+                    </Link>
                     <div className="admin-cube-green">
                         <p>Add User</p>
                     </div>
