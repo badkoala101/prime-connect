@@ -41,13 +41,13 @@ function AdminDashboard() {
                     <div className="admin-cube">
                         <p>View Users</p>
                     </div>
-                    <div className="admin-cube">
+                    <div className="admin-cube-green">
                         <p>Add User</p>
                     </div>
-                    <div className="admin-cube">
+                    <div className="admin-cube-yellow">
                         <p>Edit User</p>
                     </div>
-                    <div className="admin-cube">
+                    <div className="admin-cube-red">
                         <p>Delete User</p>
                     </div>
                 </div>

@@ -63,6 +63,48 @@
   transition: background-color 0.3s ease;
 }
 
+.admin-cube-green {
+  background-color: whitesmoke;
+  border: 1px solid #2bf802;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.admin-cube-yellow {
+  background-color: whitesmoke;
+  border: 1px solid #f4f802;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.admin-cube-red{
+  background-color: whitesmoke;
+  border: 1px solid #f80202;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.admin-cube-green:hover {
+  background-color: #e4ffe0;
+}
+.admin-cube-yellow:hover {
+  background-color: #fffee0;
+}
+.admin-cube-red:hover {
+  background-color: #ffe0e0;
+}
 .admin-cube:hover {
   background-color: #e0f3ff;
 }
