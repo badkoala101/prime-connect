@@ -10,15 +10,24 @@ function AdminDashboard() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     useEffect(() => {
-        api.get('/admin/users')
-            .then(response => {
+        // Fetch users with authorization header
+        const fetchUsers = async () => {
+            try {
+                const token = localStorage.getItem('adminToken'); // Get the token from local storage
+                const response = await api.get('/admin/users', {
+                    headers: {
+                        'Authorization': `Bearer ${token}` // Add the token to the headers
+                    }
+                });
                 setUsers(response.data);
                 setLoading(false);
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('There was an error fetching the users!', error);
                 setLoading(false);
-            });
+            }
+        };
+
+        fetchUsers();
     }, []);
 
     const toggleSidebar = () => {

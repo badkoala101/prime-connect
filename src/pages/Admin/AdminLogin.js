@@ -44,7 +44,7 @@ const AdminLogin = () => {
       }, 2000); // Show popup for 2 seconds
     } catch (error) {
       setLoading(false);
-      // Handle sign-in failure
+      // Handle sign-in failure (e.g., show error message)
     }
   };
 
