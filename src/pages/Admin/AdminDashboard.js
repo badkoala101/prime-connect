@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../Api'; // Assuming you have an axios instance named api
+import api from '../../Api'; 
 import AdminSidebar from './../../components/admin/AdminSidebar';
-import showIcon from '../../assets/show.png'; // Show icon for sidebar toggle
+import showIcon from '../../assets/show.png'; 
 import './AdminDashboard.css';
 
 function AdminDashboard() {
