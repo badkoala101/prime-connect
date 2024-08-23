@@ -88,6 +88,6 @@
 .address-type-duration p{
   width: 30%;
 }
-
-
-
+.error{
+  color: red;
+}

@@ -34,7 +34,7 @@ function Dashboard() {
     <img src={Michu} alt='MICHU' />
   </button>
 </Link>
-              <button className='coopayroll'><img src={Coopayroll} alt='CooPayRoll' /></button>
+              <Link to="/coopay"><button className='coopayroll'><img src={Coopayroll} alt='CooPayRoll' /></button></Link>
               <button className='deboo'><img src={Deboo} alt='Deboo' /></button>
             </div>
             <div className='element-2'>

@@ -23,6 +23,10 @@ import Profile from './pages/Profile';
 import MichuHome from './pages/coopproducts/Michu/MichuHome';
 import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
 import MichuLoan from './pages/coopproducts/Michu/MichuLoan';
+import BalanceQuery from './pages/coopproducts/coopay/CheckBalance';
+import CoopayHome from './pages/coopproducts/coopay/CoopayHome';
+import AccountTransfer from './pages/coopproducts/coopay/AccountTransfer';
+import SendMoney from './pages/coopproducts/coopay/SendMoney';
 
 const App = () => {
 
@@ -44,6 +48,7 @@ const App = () => {
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
             <Route path="/verifyid" element={<VerifyId />} />
+
             <Route path="/Dashboard" element={<Dashboard />}/>     
             <Route path="/Products" element={<Products />} />
             <Route path="/Notification" element={<Notification />} />
@@ -55,6 +60,12 @@ const App = () => {
 
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
             <Route path="/profile" element={<Profile />} />
+
+            <Route exact path="/coopay" element={<CoopayHome />} />
+            <Route exact path="/check-balance" element={<BalanceQuery />} />
+            <Route exact path="/transfer-money" element={<AccountTransfer />} />
+            <Route exact path="/send-money" element={<SendMoney />} />
+            
 
           {/* </Route> */}
           
