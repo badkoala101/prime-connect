@@ -7,9 +7,13 @@ const PersonalInfo = ({ onNext }) => {
         first_name: '',
         middle_name: '',
         last_name: '',
+        email: '',
         gender: '',
         birth_date: '',
-        marital_status: ''
+        marital_status: '',
+        phone_number: '',
+        id_number: '',
+        account_number: ''
     });
 
     useEffect(() => {
@@ -75,6 +79,10 @@ const PersonalInfo = ({ onNext }) => {
                     <input type="text" name="last_name" value={personalDetails.last_name} onChange={handleChange} />
                 </label>
                 <label>
+                    Email:
+                    <input type="email" name="email" value={personalDetails.email} onChange={handleChange} />
+                </label>
+                <label>
                     Gender:
                     <select name="gender" value={personalDetails.gender} onChange={handleChange}>
                         <option value="">Select</option>
@@ -96,6 +104,18 @@ const PersonalInfo = ({ onNext }) => {
                         <option value="divorced">Divorced</option>
                         <option value="widowed">Widowed</option>
                     </select>
+                </label>
+                <label>
+                    Phone Number:
+                    <input type="number" name="phone_number" value={personalDetails.phone_number} onChange={handleChange} />
+                </label>
+                <label>
+                    National/Kebele ID Number:
+                    <input type="number" name="id_number" value={personalDetails.id_number} onChange={handleChange} />
+                </label>
+                <label>
+                    Your Coop Bank Account:
+                    <input type="number" name="account_number" value={personalDetails.account_number} onChange={handleChange} />
                 </label>
                 <button className='hover' type="submit">Next</button>
             </form>

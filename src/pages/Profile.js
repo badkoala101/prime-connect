@@ -53,9 +53,13 @@ function Profile() {
                   <p className="profile-info"><strong>First Name:</strong> {userInfo.personal_info?.first_name || 'N/A'}</p>
                   <p className="profile-info"><strong>Middle Name:</strong> {userInfo.personal_info?.middle_name || 'N/A'}</p>
                   <p className="profile-info"><strong>Last Name:</strong> {userInfo.personal_info?.last_name || 'N/A'}</p>
+                  <p className="profile-info"><strong>Email:</strong> {userInfo.personal_info?.email || 'N/A'}</p>
                   <p className="profile-info"><strong>Gender:</strong> {userInfo.personal_info?.gender || 'N/A'}</p>
                   <p className="profile-info"><strong>Birth Date:</strong> {userInfo.personal_info?.birth_date || 'N/A'}</p>
                   <p className="profile-info"><strong>Marital Status:</strong> {userInfo.personal_info?.marital_status || 'N/A'}</p>
+                  <p className="profile-info"><strong>Phone Number:</strong> {userInfo.personal_info?.phone_number || 'N/A'}</p>
+                  <p className="profile-info"><strong>National/Kebele ID Number:</strong> {userInfo.personal_info?.id_number || 'N/A'}</p>
+                  <p className="profile-info"><strong>Your Coop Account:</strong> {userInfo.personal_info?.account_number || 'N/A'}</p>
                 </div>
                 <div className="profile-section">
                   <h3 className="profile-section-heading">Address Information</h3>
