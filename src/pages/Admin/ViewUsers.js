@@ -1,72 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import api from '../Api';
-import Sidebar from '../components/Sidebar';
-import show from '../assets/show.png';
-import star from '../assets/star.png';
-import starblue from '../assets/starblue.png';
-import box from '../assets/export.png';
-import './Notification.css';
+import api from '../../Api';
+import Sidebar from '../../components/admin/AdminSidebar';
+import show from '../../assets/show.png';
+import './ViewUsers.css';
 
-const Notification = () => {
+const UserManagement = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
-  const [notifications, setNotifications] = useState([]);
+  const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
-  const fetchNotifications = async () => {
+  const fetchUsers = async () => {
     try {
-      const response = await api.get('/notifications', {
+      const response = await api.get('/admin/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
       if (response.status === 200) {
-        setNotifications(response.data);
+        setUsers(response.data);
       } else {
-        throw new Error('Failed to fetch notifications');
+        throw new Error('Failed to fetch users');
       }
     } catch (error) {
-      setError('Error fetching notifications: ' + (error.response?.data?.message || error.message));
-      console.error('Error fetching notifications:', error);
+      setError('Error fetching users: ' + (error.response?.data?.message || error.message));
+      console.error('Error fetching users:', error);
     }
   };
 
   useEffect(() => {
-    fetchNotifications();
+    fetchUsers();
   }, []);
-
-  const handleFavorite = async (id, isFavorite) => {
-    try {
-      await api.patch(`/notifications/${id}/favorite`, { favorite: !isFavorite }, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        },
-      });
-      // Update local state to reflect the change
-      setNotifications(notifications.map(notification =>
-        notification.id === id ? { ...notification, favorite: !isFavorite } : notification
-      ));
-    } catch (error) {
-      setError('Error updating notification: ' + (error.response?.data?.message || error.message));
-      console.error('Error updating notification:', error);
-    }
-  };
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`/notifications/${id}`, {
+      await api.delete(`/admin/users/${id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      // Remove the notification from local state
-      setNotifications(notifications.filter(notification => notification.id !== id));
+      // Remove the user from local state
+      setUsers(users.filter(user => user.id !== id));
     } catch (error) {
-      setError('Error deleting notification: ' + (error.response?.data?.message || error.message));
-      console.error('Error deleting notification:', error);
+      setError('Error deleting user: ' + (error.response?.data?.message || error.message));
+      console.error('Error deleting user:', error);
     }
   };
 
@@ -81,36 +61,29 @@ const Notification = () => {
         )}
         <div className='notifications-content'>
           <div className="content-box_notification">
-            <h3>List of Notifications</h3>
-            <div className="tabs_notification">
-              <button className='tab active_notification'>All</button>
-              <button className='tab_notification'>Archived</button>
-              <button className='tab_notification'>Favorite</button>
-            </div>
+            <h3>User Management</h3>
             <div className="filter_notification">
-              <input type="text" placeholder="Search by product" />
+              <input type="text" placeholder="Search by user" />
             </div>
             <div className='table'>
               <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  {notifications.length > 0 ? (
-                    notifications.map((notification) => (
-                      <tr key={notification.id}>
+                  {users.length > 0 ? (
+                    users.map((user) => (
+                      <tr key={user.id}>
+                        <td>{user.id}</td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
                         <td>
-                          <img
-                            src={notification.favorite ? starblue : star}
-                            alt="star icon"
-                            onClick={() => handleFavorite(notification.id, notification.favorite)}
-                            style={{ cursor: 'pointer' }}
-                          />
-                        </td>
-                        <td><img src={notification.box || box} alt="box icon" /></td>
-                        <td style={{ color: notification.favorite ? 'blue' : 'black' }}>
-                          {notification.message}
-                        </td>
-                        <td>{notification.time}</td>
-                        <td>
-                          <button onClick={() => handleDelete(notification.id)} style={{ color: 'red' }}>
+                          <button onClick={() => handleDelete(user.id)} style={{ color: 'red' }}>
                             Delete
                           </button>
                         </td>
@@ -118,7 +91,7 @@ const Notification = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="5">No notifications found.</td>
+                      <td colSpan="4">No users found.</td>
                     </tr>
                   )}
                 </tbody>
@@ -131,4 +104,4 @@ const Notification = () => {
   );
 };
 
-export default Notification;
+export default UserManagement;

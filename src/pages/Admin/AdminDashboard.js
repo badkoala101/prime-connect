@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../Api'; // Assuming you have an axios instance named api
+import { Link } from 'react-router-dom';
+import api from '../../Api'; 
 import AdminSidebar from './../../components/admin/AdminSidebar';
-import showIcon from '../../assets/show.png'; // Show icon for sidebar toggle
+import showIcon from '../../assets/show.png'; 
 import './AdminDashboard.css';
 
 function AdminDashboard() {
@@ -47,9 +48,10 @@ function AdminDashboard() {
             <div className="admin-main-content">
                 <h2 className="admin-heading">User Management</h2>
                 <div className="admin-cube-container">
-                    <div className="admin-cube">
+                    <Link to="/viewusers"><div className="admin-cube">
                         <p>View Users</p>
                     </div>
+                    </Link>
                     <div className="admin-cube-green">
                         <p>Add User</p>
                     </div>
