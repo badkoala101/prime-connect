@@ -10,7 +10,7 @@ const MichuNav = () => {
       <img src={Michuimg} alt="Logo" className="navbar-logo" />
       </div>
       <ul className="nav-links nav-link">
-        <li><Link to="/michu">description</Link></li>
+        <li><Link to="/michu">Description</Link></li>
         <li><Link to="/apply-loan">Loan Application Form</Link></li>
         <li><Link to="/michu-loan">Loan Offer</Link></li>
       </ul>
