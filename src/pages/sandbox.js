@@ -18,8 +18,7 @@ const Sandbox = () => {
       {isInSandbox && (
         <div className="sandbox-content">
           <p>
-            You are now in the sandbox environment. Feel free to test and experiment
-            here without affecting the live production system.
+            sandbox tyically need to have the appropriate permissions and access rights 
           </p>
           {/* Add your sandbox-specific components or functionality here */}
         </div>
@@ -27,5 +26,4 @@ const Sandbox = () => {
     </div>
   );
 };
-
 export default Sandbox;
