@@ -141,6 +141,8 @@ p {
 .sign-up-link a {
   margin-left: 5px; /* Adjust spacing between text and link */
 }
+.signin-error{
+  color: red;
 
 /*spinner*/
 .spinner {

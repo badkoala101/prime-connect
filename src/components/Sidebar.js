@@ -49,6 +49,7 @@ function Sidebar({ isVisible, toggleSidebar }) {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('token');
+
     navigate('/signin');
   };
 
