@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.souqpass {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.back-button {
+  background-color: #007bff; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  margin-bottom: 20px; 
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3; 
+}
+
+.souqpass h1 {
+  font-size: 3em;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.souqpass-intro h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.souqpass-intro p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.souqpass-features {
+  margin: 40px 0;
+}
+
+.feature-item {
+  margin-bottom: 30px;
+}
+
+.feature-item h3 {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.souqpass-steps h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.step {
+  margin-bottom: 30px;
+}
+
+.step h3 {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.step.success h3 {
+  color: #28a745;
+}
+
+.souqpass-call-to-action {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.souqpass-call-to-action h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+}
+
+.souqpass-call-to-action p {
+  font-size: 1.2em;
+  margin: 20px 0;
+  color: #333;
+}
+
+.souqpass-call-to-action .cta-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.souqpass-call-to-action .cta-button:hover {
+  background-color: #0056b3;
+}

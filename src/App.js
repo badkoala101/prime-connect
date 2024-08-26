@@ -20,6 +20,7 @@ import Product from './pages/Product';
 import Faq from './pages/Faq';
 import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
+import Souqpass from './pages/coopproducts/Souqpass';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminLogin from './pages/Admin/AdminLogin';
 import ViewUsers from './pages/Admin/ViewUsers';
@@ -35,6 +36,7 @@ import BalanceQuery from './pages/coopproducts/coopay/CheckBalance';
 import CoopayHome from './pages/coopproducts/coopay/CoopayHome';
 import AccountTransfer from './pages/coopproducts/coopay/AccountTransfer';
 import SendMoney from './pages/coopproducts/coopay/SendMoney';
+import LoanDashboard from './pages/coopproducts/Michu/LoanDashboard';
 
 const App = () => {
   const isAuthenticated = !!localStorage.getItem('token');
@@ -79,15 +81,17 @@ const App = () => {
 
           {/* </Route> */}
           
-                    </Route>
+                      <Route path="/souqpass" element={<Souqpass />} />
+            <Route path="/loandashboard" element={<LoanDashboard />} />
+          </Route>
 
           {/* Admin Routes (Protected) */}
-          <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}>
+          {/* <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}> */}
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/viewusers" element={<ViewUsers />} />
             <Route path="/view-user-detail/:id" element={<ViewUserDetail />} />
             
-          </Route>
+          {/* </Route> */}
         </Routes>
       </div>
     </Router>

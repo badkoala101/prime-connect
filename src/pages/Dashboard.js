@@ -40,8 +40,9 @@ function Dashboard() {
               <img src={Deboo} alt='Deboo' />
             
        
-            
+            <Link to="/souqpass">
               <img src={Souqpass} alt='Souqpass' />
+            </Link>
             
             <Link to="/diaspora-banking">
               
