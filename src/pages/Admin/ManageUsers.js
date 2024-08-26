@@ -1,34 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import api from '../../Api'; 
+import api from '../../Api'; // Assuming you have an axios instance named api
 import AdminSidebar from './../../components/admin/AdminSidebar';
-import showIcon from '../../assets/show.png'; 
-import './AdminDashboard.css';
+import showIcon from '../../assets/show.png'; // Show icon for sidebar toggle
+import './ManageUsers.css';
 
-function AdminDashboard() {
+function ManageUsers() {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     useEffect(() => {
-        // Fetch users with authorization header
-        const fetchUsers = async () => {
-            try {
-                const token = localStorage.getItem('adminToken'); // Get the token from local storage
-                const response = await api.get('/admin/users', {
-                    headers: {
-                        'Authorization': `Bearer ${token}` // Add the token to the headers
-                    }
-                });
+        api.get('/admin/users')
+            .then(response => {
                 setUsers(response.data);
                 setLoading(false);
-            } catch (error) {
+            })
+            .catch(error => {
                 console.error('There was an error fetching the users!', error);
                 setLoading(false);
-            }
-        };
-
-        fetchUsers();
+            });
     }, []);
 
     const toggleSidebar = () => {
@@ -48,14 +38,22 @@ function AdminDashboard() {
             <div className="admin-main-content">
                 <h2 className="admin-heading">User Management</h2>
                 <div className="admin-cube-container">
-                    <Link to="/viewusers"><div className="admin-cube">
+                    <div className="admin-cube">
                         <p>View Users</p>
                     </div>
-                    </Link>
+                    <div className="admin-cube">
+                        <p>Add User</p>
+                    </div>
+                    <div className="admin-cube">
+                        <p>Edit User</p>
+                    </div>
+                    <div className="admin-cube">
+                        <p>Delete User</p>
+                    </div>
                 </div>
             </div>
         </div>
     );
 }
 
-export default AdminDashboard;
+export default ManageUsers;

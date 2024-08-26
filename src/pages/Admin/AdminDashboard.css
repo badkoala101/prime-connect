@@ -1,108 +1,116 @@
-.profile-container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .profile-main-content {
-    flex-grow: 1;
-    margin-left: 250px; /* Adjust based on your sidebar width */
-    padding: 20px;
-    background-color: #f9f9f9;
-    transition: margin-left 0.3s ease;
-    overflow-y: auto;
-  }
-  
-  .profile-main-content-full-width {
-    margin-left: 0;
-  }
-  
-  .profile-content {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: calc(100vh - 40px);
-    overflow-y: auto;
-  }
-  
-  .loading-indicator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-size: 1.5em;
-    color: #007bff; /* Primary color */
-  }
-  
-  .profile-heading {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .profile-section {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .profile-section-heading {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #007bff; /* Primary color */
-  }
-  
-  .profile-info {
-    margin: 5px 0;
-    line-height: 1.6;
-  }
-  
-  .profile-info strong {
-    color: #333;
-  }
-  
-  .sidebar-show-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    font-size: 15px;
-    z-index: 1000;
-  }
-  
-  .sidebar-show-button .show {
-    width: 20px;
-    height: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+.admin-dashboard-container {
+  display: flex;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.show-sidebar-btn {
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.show-sidebar-btn img {
+  width: 20px; /* Smaller width to match the hide button */
+  height: 20px;
+}
+
+.show-sidebar-btn.hidden {
+  display: none;
+}
+
+.admin-main-content {
+  margin-left: 15rem;
+  padding: 2rem;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.admin-dashboard-container.sidebar-visible .admin-main-content {
+  margin-left: 15rem;
+}
+
+.admin-dashboard-container:not(.sidebar-visible) .admin-main-content {
+  margin-left: 2rem; /* Adjust this based on your design */
+}
+
+.admin-heading {
+  color: #029af8;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-cube-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.admin-cube {
+  background-color: whitesmoke;
+  border: 1px solid #029af8;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-cube-green {
+  background-color: whitesmoke;
+  border: 1px solid #2bf802;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.admin-cube-yellow {
+  background-color: whitesmoke;
+  border: 1px solid #f4f802;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.admin-cube-red{
+  background-color: whitesmoke;
+  border: 1px solid #f80202;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.admin-cube-green:hover {
+  background-color: #e4ffe0;
+}
+.admin-cube-yellow:hover {
+  background-color: #fffee0;
+}
+.admin-cube-red:hover {
+  background-color: #ffe0e0;
+}
+.admin-cube:hover {
+  background-color: #e0f3ff;
+}
+
+.admin-cube p {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}

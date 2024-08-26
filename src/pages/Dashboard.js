@@ -17,33 +17,40 @@ function Dashboard() {
   };
 
   return (
-    <div className='content-box_dashboard'>
-      <div className="dashboard-container">
-        <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
-        <main className={`main-content ${isSidebarVisible ? '' : 'full-width'}`}>
-          {!isSidebarVisible && (
-            <button className="sidebar-show-button" onClick={toggleSidebar}>
-              <img src={show}  alt='show' className='show' />
-            </button>
-          )}
-          <div className='content-placeholder'>
-            {/* Placeholder for the main content area */}
-            <div className='element-1'>
+    <div className='dashboard-container'>
+      <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+      <main className={`main-content ${isSidebarVisible ? '' : 'full-width'}`}>
+        {!isSidebarVisible && (
+          <button className="sidebar-show-button" onClick={toggleSidebar}>
+            <img src={show} alt='show' className='show' />
+          </button>
+        )}
+        <div className='content-placeholder'>
+          {/* Placeholder for the main content area */}
+          
             <Link to="/michu">
-  <button className='michu'>
-    <img src={Michu} alt='MICHU' />
-  </button>
-</Link>
-              <Link to="/coopay"><button className='coopayroll'><img src={Coopayroll} alt='CooPayRoll' /></button></Link>
-              <button className='deboo'><img src={Deboo} alt='Deboo' /></button>
-            </div>
-            <div className='element-2'>
-              <button className='souqpass'><img src={Souqpass} alt='Souqpass' /></button>
-              <Link to="/diaspora-banking"><button className='diasporaBanking'><img src={Diasporabanking} alt='Diaspora Banking' /></button></Link>
-            </div>
-          </div>
-        </main>
-      </div>
+
+                <img src={Michu} alt='MICHU' />
+              
+            </Link>
+            
+              <img src={Coopayroll} alt='CooPayRoll' />
+           
+            
+              <img src={Deboo} alt='Deboo' />
+            
+       
+            
+              <img src={Souqpass} alt='Souqpass' />
+            
+            <Link to="/diaspora-banking">
+              
+                <img src={Diasporabanking} alt='Diaspora Banking' />
+             
+            </Link>
+          
+        </div>
+      </main>
     </div>
   );
 }

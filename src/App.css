@@ -6,6 +6,7 @@ body {
 
 .navbar {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
@@ -186,18 +187,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .hero-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  box-shadow: 0 0 10px #007bff;
 
 }
-.hero-image img:hover {
-  transform: rotate(-30deg)
 
-}
 .hero-image2 {
   flex: 1;
   display: flex;
@@ -206,15 +206,12 @@ body {
 }
 
 .hero-image2 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 80%;
+  height: 100;
   border-radius: 8px;
 
 }
-.hero-image2 img:hover {
-  transform: rotate(-30deg)
 
-}
 
 .features {
   display: flex;
@@ -230,7 +227,17 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   width: 20%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.feature-card:hover {
+  
+  transform: translateY(-10px); /* Makes the card float upwards */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Deepens the shadow */
+  
+  
+}
+
 .feature-card img{
   height: 25px;
   width: 25px;

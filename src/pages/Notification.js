@@ -4,12 +4,12 @@ import Sidebar from '../components/Sidebar';
 import show from '../assets/show.png';
 import star from '../assets/star.png';
 import starblue from '../assets/starblue.png';
-import box from '../assets/export.png';
 import './Notification.css';
 
 const Notification = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [notifications, setNotifications] = useState([]);
+  const [activeTab, setActiveTab] = useState('All'); // Added state for active tab
   const [error, setError] = useState(null);
 
   const toggleSidebar = () => {
@@ -24,7 +24,8 @@ const Notification = () => {
         },
       });
       if (response.status === 200) {
-        setNotifications(response.data);
+        const sortedNotifications = response.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+        setNotifications(sortedNotifications);
       } else {
         throw new Error('Failed to fetch notifications');
       }
@@ -40,20 +41,25 @@ const Notification = () => {
 
   const handleFavorite = async (id, isFavorite) => {
     try {
-      await api.patch(`/notifications/${id}/favorite`, { favorite: !isFavorite }, {
+      const response = await api.patch(`/notifications/${id}/favorite`, { favorite: !isFavorite }, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      // Update local state to reflect the change
-      setNotifications(notifications.map(notification =>
-        notification.id === id ? { ...notification, favorite: !isFavorite } : notification
-      ));
+      
+      if (response.status === 200) {
+        setNotifications(notifications.map(notification =>
+          notification.id === id ? { ...notification, favorite: !isFavorite } : notification
+        ));
+      } else {
+        throw new Error('Failed to update favorite status');
+      }
     } catch (error) {
       setError('Error updating notification: ' + (error.response?.data?.message || error.message));
       console.error('Error updating notification:', error);
     }
   };
+  
 
   const handleDelete = async (id) => {
     try {
@@ -62,13 +68,36 @@ const Notification = () => {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      // Remove the notification from local state
       setNotifications(notifications.filter(notification => notification.id !== id));
     } catch (error) {
       setError('Error deleting notification: ' + (error.response?.data?.message || error.message));
       console.error('Error deleting notification:', error);
     }
   };
+
+  const markAsRead = async (id) => {
+    try {
+      await api.patch(`/notifications/${id}/read`, { read: true }, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      setNotifications(notifications.map(notification =>
+        notification.id === id ? { ...notification, read: true } : notification
+      ));
+    } catch (error) {
+      setError('Error updating notification: ' + (error.response?.data?.message || error.message));
+      console.error('Error updating notification:', error);
+    }
+  };
+
+  // Filter notifications based on active tab
+  const filteredNotifications = notifications.filter(notification => {
+    if (activeTab === 'Favorite') {
+      return notification.favorite;
+    } 
+    return true;
+  });
 
   return (
     <div className="notifications-container">
@@ -83,9 +112,24 @@ const Notification = () => {
           <div className="content-box_notification">
             <h3>List of Notifications</h3>
             <div className="tabs_notification">
-              <button className='tab active_notification'>All</button>
-              <button className='tab_notification'>Archived</button>
-              <button className='tab_notification'>Favorite</button>
+              <button 
+                className={`tab ${activeTab === 'All' ? 'active_notification' : ''}`} 
+                onClick={() => setActiveTab('All')}
+              >
+                All
+              </button>
+              <button 
+                className={`tab ${activeTab === 'Archived' ? 'active_notification' : ''}`} 
+                onClick={() => setActiveTab('Archived')}
+              >
+                Archived
+              </button>
+              <button 
+                className={`tab ${activeTab === 'Favorite' ? 'active_notification' : ''}`} 
+                onClick={() => setActiveTab('Favorite')}
+              >
+                Favorite
+              </button>
             </div>
             <div className="filter_notification">
               <input type="text" placeholder="Search by product" />
@@ -93,8 +137,8 @@ const Notification = () => {
             <div className='table'>
               <table>
                 <tbody>
-                  {notifications.length > 0 ? (
-                    notifications.map((notification) => (
+                  {filteredNotifications.length > 0 ? (
+                    filteredNotifications.map((notification) => (
                       <tr key={notification.id}>
                         <td>
                           <img
@@ -104,15 +148,21 @@ const Notification = () => {
                             style={{ cursor: 'pointer' }}
                           />
                         </td>
-                        <td><img src={notification.box || box} alt="box icon" /></td>
-                        <td style={{ color: notification.favorite ? 'blue' : 'black' }}>
-                          {notification.message}
+                        <td 
+                          onClick={() => markAsRead(notification.id)}
+                          style={{ 
+                            fontWeight: notification.read ? 'normal' : 'bold',
+                            cursor: 'pointer' 
+                          }}>
+                          {notification.message} {!notification.read && <span style={{ color: 'red', marginLeft: '5px' }}>New</span>}
                         </td>
-                        <td>{notification.time}</td>
                         <td>
                           <button onClick={() => handleDelete(notification.id)} style={{ color: 'red' }}>
                             Delete
                           </button>
+                        </td>
+                        <td>
+                          <span>{new Date(notification.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                         </td>
                       </tr>
                     ))
