@@ -5,10 +5,11 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    margin-top: 95px;
   }
   
   .loan-application-form input {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;

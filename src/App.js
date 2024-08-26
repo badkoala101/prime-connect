@@ -14,15 +14,19 @@ import Signin from './components/user/signin/Signin';
 import VerifyId from './pages/verifyId/VerifyId';
 import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
-import Michu from './pages/coopproducts/Michu';
-import LoanApplication from './components/digitalproductcomponents/LoanApplication';
 import DiasporaBanking from './pages/coopproducts/Diasporabanking';
 import ProtectedRooute from './ProtectedRooute';
 import Product from './pages/Product';
 import Faq from './pages/Faq';
 import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
+
 import Sandbox from './pages/sandbox';
+
+import MichuHome from './pages/coopproducts/Michu/MichuHome';
+import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
+import MichuLoan from './pages/coopproducts/Michu/MichuLoan';
+
 
 const App = () => {
 
@@ -40,7 +44,7 @@ const App = () => {
           <Route path="/Documentation" element={<Documentation />}/>  
           <Route path="/Sandbox" element={<Sandbox />} />   
 
-          <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
+          {/* <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}> */}
             <Route path="/checkemail" element={<CheckEmail />} />    
             <Route path="/resetpsw" element={<ResetPsw />} />        
             <Route path="/authentication" element={<Authentication/>} />         
@@ -49,12 +53,15 @@ const App = () => {
             <Route path="/Products" element={<Products />} />
             <Route path="/Notification" element={<Notification />} />
             <Route exact path="/items" element={<Item />} />
-            <Route path="/michu" element={<Michu />} />
+
+            <Route path="/michu" element={<MichuHome/>} />
             <Route path="/apply-loan" element={<LoanApplication />} />
+            <Route path="/michu-loan" element={<MichuLoan/>} />
+
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
             <Route path="/profile" element={<Profile />} />
 
-          </Route>
+          {/* </Route> */}
           
           
 

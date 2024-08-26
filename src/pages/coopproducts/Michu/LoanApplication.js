@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import api from '../../Api'; // Import your configured axios instance
+import api from '../../../Api'; 
 import './LoanApplication.css';
+import MichuNav from './MichuNav';
 
 const LoanApplication = () => {
   const [name, setName] = useState('');
@@ -36,6 +37,7 @@ const LoanApplication = () => {
 
   return (
     <div className="loan-application-form">
+      <MichuNav/>
       <h2>Loan Application</h2>
       <form onSubmit={handleSubmit}>
         <input
