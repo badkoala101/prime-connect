@@ -52,15 +52,6 @@ function AdminDashboard() {
                         <p>View Users</p>
                     </div>
                     </Link>
-                    <div className="admin-cube-green">
-                        <p>Add User</p>
-                    </div>
-                    <div className="admin-cube-yellow">
-                        <p>Edit User</p>
-                    </div>
-                    <div className="admin-cube-red">
-                        <p>Delete User</p>
-                    </div>
                 </div>
             </div>
         </div>

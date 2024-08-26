@@ -1,0 +1,81 @@
+/* ViewUserDetail.css */
+
+.error-message {
+    color: #d9534f; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 150px 0px 0px 25%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: fit-content;
+    padding: 40px 100px;
+  }
+.user-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Make sure the button can be positioned relative to this container */
+  }
+  
+  .user-detail-content {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 60px; /* Increase margin to separate the button from the information */
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .user-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Reduce gap between sections */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .user-detail-section {
+    flex: 1;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-detail-section-heading {
+    margin-bottom: 10px; /* Reduce space below section headings */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-detail-info {
+    margin-bottom: 8px; /* Reduce space between info items */
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .loading-indicator {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+  }
+  

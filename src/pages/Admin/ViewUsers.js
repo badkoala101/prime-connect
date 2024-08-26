@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Assuming you have React Router for navigation
 import api from '../../Api';
 import Sidebar from '../../components/admin/AdminSidebar';
 import show from '../../assets/show.png';
@@ -63,13 +64,14 @@ const UserManagement = () => {
           <div className="content-box_notification">
             <h3>User Management</h3>
             <div className="filter_notification">
-              <input type="text" placeholder="Search by user" />
+              <input type="text" placeholder="Search users" />
             </div>
             <div className='table'>
               <table>
                 <thead>
-                  <tr>
-                    <th>ID</th>
+                  <tr className='view-table-rows'>
+                    <th className='view-table-no'>#</th>
+                    <th className='view-table-id'>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Actions</th>
@@ -77,12 +79,17 @@ const UserManagement = () => {
                 </thead>
                 <tbody>
                   {users.length > 0 ? (
-                    users.map((user) => (
+                    users.map((user, index) => (
                       <tr key={user.id}>
+                        <td>{index + 1}</td>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
-                        <td>
+                        <td className='view-action-buttons'>
+                          {/* Pass the user ID to the ViewUserDetail route */}
+                          <Link to={`/view-user-detail/${user.id}`}>
+                            <button className='view-detail-btn'>View Details</button>
+                          </Link>
                           <button onClick={() => handleDelete(user.id)} style={{ color: 'red' }}>
                             Delete
                           </button>
@@ -91,7 +98,7 @@ const UserManagement = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="4">No users found.</td>
+                      <td colSpan="5">No users found.</td>
                     </tr>
                   )}
                 </tbody>

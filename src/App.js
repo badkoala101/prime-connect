@@ -23,6 +23,7 @@ import Profile from './pages/Profile';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminLogin from './pages/Admin/AdminLogin';
 import ViewUsers from './pages/Admin/ViewUsers';
+import ViewUserDetail from './pages/Admin/ViewUserDetail';
 import AddUser from './pages/Admin/AddUsers';
 import EditUser from './pages/Admin/EditUsers';
 
@@ -70,6 +71,7 @@ const App = () => {
           <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}>
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/viewusers" element={<ViewUsers />} />
+            <Route path="/view-user-detail/:id" element={<ViewUserDetail />} />
             
           </Route>
         </Routes>
