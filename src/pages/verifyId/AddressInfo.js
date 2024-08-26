@@ -4,6 +4,7 @@ import api from '../../Api';
 import './VerifyId.css';
 
 const AddressInfo = () => {
+    const [buttonClicked, setbuttonClicked]=useState(false);
     const [addressDetails, setAddressDetails] = useState({
         country: '',
         region: '',
@@ -17,7 +18,9 @@ const AddressInfo = () => {
         address_duration: 'permanent'
     });
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Hook to manage navigation
+            const personalInfo = localStorage.getItem('personalInfo');
+
 
     useEffect(() => {
         // Removed automatic redirect logic from useEffect
@@ -32,6 +35,7 @@ const AddressInfo = () => {
     };
 
     const handleSubmit = async (e) => {
+        if(personalInfo){
         e.preventDefault();
         try {
             const response = await api.post('/address-info', addressDetails, {
@@ -48,6 +52,7 @@ const AddressInfo = () => {
         } catch (error) {
             console.error('Error saving address details:', error.response?.data?.message || error.message);
         }
+    }
     };
 
     return (
@@ -126,7 +131,8 @@ const AddressInfo = () => {
                         </label>
                     </div>
                 </div>
-                <button type="submit">Save changes</button>
+                <button onClick={()=>{setbuttonClicked(true)} }type="submit">Save changes</button>
+                {buttonClicked && <div className='error'>Fillout personalInfo fist</div>}
             </form>
         </div>
     );

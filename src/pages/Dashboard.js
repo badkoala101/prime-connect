@@ -29,7 +29,7 @@ function Dashboard() {
           {/* Placeholder for the main content area */}
           
             <Link to="/michu">
-              
+
                 <img src={Michu} alt='MICHU' />
               
             </Link>

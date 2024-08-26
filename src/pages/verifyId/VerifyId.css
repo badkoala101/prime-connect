@@ -88,6 +88,10 @@
 .address-type-duration p{
   width: 30%;
 }
+.error{
+  color: red;
+}
+
 
 .message-box {
   display: flex;
@@ -128,5 +132,4 @@
 .message-box button:hover {
   background-color: #0056b3;
 }
-
 
