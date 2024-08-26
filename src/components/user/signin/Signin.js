@@ -62,7 +62,6 @@ const SignIn = () => {
     <div className="sign-in-page container">
       <div className="Content">
         <Title title="Sign In" description="Welcome back! Please enter your details"/>
-        {message && <p className='signin-error'>Incorrect email or password</p>}
         <form onSubmit={handleSignIn}>
           <div className="input-group">
             <input
