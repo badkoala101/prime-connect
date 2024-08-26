@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+.admin-login-page {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Outfit', sans-serif;
+}
+
+.admin-content {
+  width: 300px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.admin-title {
+  color: #0EA5E9;
+  font-size: 40px; 
+}
+
+.admin-description {
+  font-size: 13px;
+}
+
+.admin-input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.admin-input-group input {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: #0EA5E9 solid 2px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.admin-input-group input:focus {
+  border-color: #0c99da; 
+  outline: none; 
+}
+
+.admin-password-input {
+  padding-right: 70px; 
+}
+
+.admin-show-password-button {
+  color: #0EA5E9;
+  position: absolute;
+  right: 40px;
+  top: 40%;
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+}
+
+.admin-sign-in-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+}
+
+.admin-sign-in-button:hover {
+  background-color: #0056b3;
+}
+
+/* Admin Spinner */
+.admin-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-left-color: #333;
+  animation: spin 1s ease infinite;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Admin Popup */
+.admin-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007bff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.admin-popup-content {
+  color: #fff;
+  text-align: center;
+}
+
+.admin-popup-content h3 {
+  margin: 0;
+}

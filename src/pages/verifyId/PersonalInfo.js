@@ -7,11 +7,14 @@ const PersonalInfo = ({ onNext }) => {
         first_name: '',
         middle_name: '',
         last_name: '',
+        email: '',
         gender: '',
         birth_date: '',
-        marital_status: ''
+        marital_status: '',
+        phone_number: '',
+        id_number: '',
+        account_number: ''
     });
-    const [personalDetailsFilled, setPersonalDetailsFilled] = useState(false);
 
     useEffect(() => {
         const checkIfSubmitted = async () => {
@@ -22,7 +25,7 @@ const PersonalInfo = ({ onNext }) => {
                     },
                 });
                 if (response.data.personal_info) {
-                    onNext(); // Trigger page change if personal info is already submitted
+                    // Removed onNext() call to prevent automatic redirection
                 }
             } catch (error) {
                 console.error('Error checking submission status:', error.response?.data?.message || error.message);
@@ -30,7 +33,7 @@ const PersonalInfo = ({ onNext }) => {
         };
 
         checkIfSubmitted();
-    }, [onNext]);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -49,7 +52,6 @@ const PersonalInfo = ({ onNext }) => {
                 }
             });
             if (response.status === 200) {
-                setPersonalDetailsFilled(true);
                 console.log('Personal details saved successfully:', response.data);
                 onNext(); // Trigger page change after successful submission
             } else {
@@ -77,6 +79,10 @@ const PersonalInfo = ({ onNext }) => {
                     <input type="text" name="last_name" value={personalDetails.last_name} onChange={handleChange} />
                 </label>
                 <label>
+                    Email:
+                    <input type="email" name="email" value={personalDetails.email} onChange={handleChange} />
+                </label>
+                <label>
                     Gender:
                     <select name="gender" value={personalDetails.gender} onChange={handleChange}>
                         <option value="">Select</option>
@@ -99,7 +105,19 @@ const PersonalInfo = ({ onNext }) => {
                         <option value="widowed">Widowed</option>
                     </select>
                 </label>
-                <button className='hover' type="submit">Next</button> {/* Renamed button to 'Next' */}
+                <label>
+                    Phone Number:
+                    <input type="number" name="phone_number" value={personalDetails.phone_number} onChange={handleChange} />
+                </label>
+                <label>
+                    National/Kebele ID Number:
+                    <input type="number" name="id_number" value={personalDetails.id_number} onChange={handleChange} />
+                </label>
+                <label>
+                    Your Coop Bank Account:
+                    <input type="number" name="account_number" value={personalDetails.account_number} onChange={handleChange} />
+                </label>
+                <button className='hover' type="submit">Next</button>
             </form>
         </div>
     );

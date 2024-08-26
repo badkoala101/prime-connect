@@ -1,90 +1,84 @@
-.content {
-    flex-grow: 1;
+/* Dashboard.css */
+
+/* Main container with sidebar */
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  
+  
+
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Adjust as per your sidebar width */
+  transition: 0.3s ease;
+}
+
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+    margin-left: 250px; /* Adjust based on your sidebar width */
     padding: 20px;
     background-color: white;
-    transition: 0.3s ease;
-    margin-left: 250px; /* Adjusted for sidebar width */
-    position: relative;
-  }
-  
-  .content .full-width {
-    margin-left: 0;
-    transition: 0.3s ease;
+    transition: margin-left 0.3s ease;
+    overflow-y: auto;
     
-  }
   
-  .content-placeholder {
-    justify-content: center;
-    
-    padding: 10px;
-    
-  }
-
-  
-  .element-1{
-    display: inline;
-    margin: 150px;
-    margin-left: 300px;
-  }
-  .element-2{
-    display: inline;
-    margin: 250px 250px;
-    margin-left: 300px;
-  }
-  .michu {
-    margin: 10px;
-  }
-
-
-.michu{
-  margin: 10px;
 }
-  .deboo {
-   margin: 10px;
-  }
-  .coopayroll {
-    margin: 10px;
-  }
-  .souqpass {
-    margin: 10px;
-  }
-  .diasporaBanking {
-    margin: 10px;
-  }
-  .content-placeholder button{
-    border: none;
-    cursor: pointer;
-    background-color: whitesmoke;
-    padding: 5px;
-    border-radius: 15px;
 
-  }
-  .content-placeholder button img{
-    width: 200px;
-    height: 100px;
-    border-radius: 15px;
-  }
-
+/* Full width when sidebar is hidden */
+.main-content.full-width {
+  margin-left: 0;
  
-  
-  .content-placeholder button:hover{
-    background-color: lightgrey;
-    transition: 0.3s ease;
-  }
-.sidebar-show-button img{
+}
+
+/* Content placeholder */
+.content-placeholder {
+  display: flex;
+  flex-wrap: wrap; /* Adjust layout for responsiveness */
+  justify-content: center;
+  padding: 10px;
+  background-color: white;
+  border: 1px dashed #9e9e9e;
+  height: 100vh;
+  margin: 20px;
+ 
+}
+
+
+
+
+
+.content-placeholder img {
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  margin: 25px;
+  border: 1px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-placeholder img:hover {
+  box-shadow: 0 0 10px #007bff;
+  transform: translateY(-10px);
+
+}
+
+/* Sidebar toggle button */
+.sidebar-show-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  margin-top: 1rem;
+  z-index: 1000;
+  box-shadow: 0 0 5px whitesmoke;
+}
+
+.sidebar-show-button img {
   width: 20px;
   height: 20px;
-
 }
-  .sidebar-show-button {
-    position: fixed; 
-    top: 20px; 
-    left: 20px; 
-    background: none;
-    border: none;
-    font-size: 15px;
-    margin-top: 1rem;
-    
-    z-index: 1000; 
-  }
-  

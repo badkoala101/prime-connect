@@ -4,6 +4,9 @@ import './Signin.css';
 import '../user.css';
 import Title from '../title/Title';
 import api from '../../../Api';
+import google from '../../../assets/google.png';
+import github from '../../../assets/github.svg';
+import facebook from '../../../assets/facebook.png';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -100,9 +103,9 @@ const SignIn = () => {
         </form>
 
         <div className="third-party-sign-in">
-          <button>Sign in with Google</button>
-          <button>Sign in with GitHub</button>
-          <button>Sign in with Facebook</button>
+          <button>Sign in with Google<img src={google} className="socialicons" alt="google" /></button>
+          <button>Sign in with GitHub<img src={github} className="socialicons" alt="github" /></button>
+          <button>Sign in with Facebook<img src={facebook} className="socialicons" alt="facebook" /></button>
         </div>
         <p className="sign-up-link">
           Don't have an account? <Link to="/signup">Sign up</Link>

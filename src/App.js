@@ -20,62 +20,52 @@ import Product from './pages/Product';
 import Faq from './pages/Faq';
 import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
-
-import Sandbox from './pages/sandbox';
-
 import MichuHome from './pages/coopproducts/Michu/MichuHome';
 import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
 import MichuLoan from './pages/coopproducts/Michu/MichuLoan';
 
 
 const App = () => {
+  const isAuthenticated = !!localStorage.getItem('token');
+  const isAdminAuthenticated = !!localStorage.getItem('adminToken'); // For admin authentication
 
-  const isAuthenticated=!!localStorage.getItem('token');
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Home />} />      
+          {/* Public Routes */}
+          <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/Signin" element={<Signin />} />
-          <Route path="/forgot-password" element={<Forgotpsw />} /> 
-          <Route path="/Faq" element={<Faq />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/forgot-password" element={<Forgotpsw />} />
+          <Route path="/faq" element={<Faq />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/Documentation" element={<Documentation />}/>  
-          <Route path="/Sandbox" element={<Sandbox />} />   
+          <Route path="/Documentation" element={<Documentation />}/>     
 
-          {/* <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}> */}
-            <Route path="/checkemail" element={<CheckEmail />} />    
-            <Route path="/resetpsw" element={<ResetPsw />} />        
-            <Route path="/authentication" element={<Authentication/>} />         
+          {/* Protected User Routes */}
+          <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
+            <Route path="/checkemail" element={<CheckEmail />} />
+            <Route path="/resetpsw" element={<ResetPsw />} />
+            <Route path="/authentication" element={<Authentication />} />
             <Route path="/verifyid" element={<VerifyId />} />
-            <Route path="/Dashboard" element={<Dashboard />}/>     
-            <Route path="/Products" element={<Products />} />
-            <Route path="/Notification" element={<Notification />} />
-            <Route exact path="/items" element={<Item />} />
-
-            <Route path="/michu" element={<MichuHome/>} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/items" element={<Item />} />
+            <Route path="/michu" element={<MichuHome />} />
             <Route path="/apply-loan" element={<LoanApplication />} />
-            <Route path="/michu-loan" element={<MichuLoan/>} />
-
+            <Route path="/michu-loan" element={<MichuLoan />} />
             <Route path="/diaspora-banking" element={<DiasporaBanking />} />
             <Route path="/profile" element={<Profile />} />
+          </Route>
 
-          {/* </Route> */}
-          
-          
-
-
-
-
-
-
-
-
-
-
+          {/* Admin Routes (Protected) */}
+          <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/viewusers" element={<ViewUsers />} />
+            
+          </Route>
         </Routes>
-
       </div>
     </Router>
   );
