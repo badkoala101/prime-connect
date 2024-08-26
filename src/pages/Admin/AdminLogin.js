@@ -9,6 +9,7 @@ const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
@@ -26,25 +27,33 @@ const AdminLogin = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage('');
 
     try {
       const response = await api.post('/admin/login', { username, password });
 
-      // Store token
-      localStorage.setItem('adminToken', response.data.token);
+      // Check if the response contains the admin data
+      if (response.data.admin && response.data.token) {
+        // Store token
+        localStorage.setItem('adminToken', response.data.token);
 
-      // Show success popup
-      setLoading(false);
-      setShowPopup(true);
+        // Show success popup
+        setLoading(false);
+        setShowPopup(true);
 
-      // Navigate to admin dashboard
-      setTimeout(() => {
-        setShowPopup(false);
-        navigate('/admin');
-      }, 2000); // Show popup for 2 seconds
+        // Navigate to admin dashboard
+        setTimeout(() => {
+          setShowPopup(false);
+          navigate('/admin');
+        }, 2000); // Show popup for 2 seconds
+      } else {
+        setLoading(false);
+        setErrorMessage('Invalid credentials');
+      }
     } catch (error) {
       setLoading(false);
-      // Handle sign-in failure (e.g., show error message)
+      // Handle sign-in failure
+      setErrorMessage('Failed to sign in: ' + (error.response?.data?.error || 'Unknown error'));
     }
   };
 
@@ -81,6 +90,8 @@ const AdminLogin = () => {
             {loading ? <div className="admin-spinner"></div> : 'Sign in'}
           </button>
         </form>
+
+        {errorMessage && <p className="admin-error-message">{errorMessage}</p>}
       </div>
 
       {showPopup && (
