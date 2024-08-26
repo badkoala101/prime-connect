@@ -1,0 +1,228 @@
+/* Import the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.diaspora-banking {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+.back-button {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  margin-bottom: 20px; /* Space below the button */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.diaspora-banking h1 {
+  font-size: 3em;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.diaspora-description {
+  margin-bottom: 40px;
+}
+
+.diaspora-description h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+}
+
+.diaspora-description p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.exchange-rates-table {
+  margin-top: 20px;
+}
+
+.exchange-rates-table h2 {
+  font-size: 2em;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.exchange-rates-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.exchange-rates-table th,
+.exchange-rates-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.exchange-rates-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.exchange-rates-table td {
+  background-color: #fff;
+}
+
+.service-details {
+  margin: 40px 0;
+}
+
+.service-details h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+}
+
+.service-details .service-item {
+  margin-bottom: 20px;
+}
+
+.service-details .service-item h3 {
+  font-size: 1.8em;
+  color: #007bff;
+}
+
+.call-to-action {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.call-to-action h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+}
+
+.call-to-action p {
+  font-size: 1.2em;
+  margin: 20px 0;
+  color: #333;
+}
+
+.call-to-action .cta-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.call-to-action .cta-button:hover {
+  background-color: #0056b3;
+}
+
+.stats-section {
+  margin: 40px 0;
+}
+
+.stats-section h2 {
+  text-align:center;
+  font-size: 2.5em;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  flex: 1;
+  margin: 10px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2em;
+  color: #007bff;
+}
+
+.testimonials {
+  margin: 40px 0;
+}
+
+.testimonials h2 {
+  font-size: 2.5em;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.testimonial {
+  margin-bottom: 20px;
+}
+
+.testimonial p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.contact-form {
+  margin: 40px 0;
+}
+
+.contact-form h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact-form .form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}

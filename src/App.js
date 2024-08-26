@@ -14,36 +14,81 @@ import Signin from './components/user/signin/Signin';
 import VerifyId from './pages/verifyId/VerifyId';
 import Sidebar from './components/Sidebar';
 import Item from './pages/Item';
-import Michu from './pages/coopproducts/Michu';
-import LoanApplication from './components/digitalproductcomponents/LoanApplication';
+import DiasporaBanking from './pages/coopproducts/Diasporabanking';
 import ProtectedRooute from './ProtectedRooute';
+import Product from './pages/Product';
+import Faq from './pages/Faq';
+import Documentation from './pages/Documentation';
+import Profile from './pages/Profile';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import AdminLogin from './pages/Admin/AdminLogin';
+import ViewUsers from './pages/Admin/ViewUsers';
+import ViewUserDetail from './pages/Admin/ViewUserDetail';
+import AddUser from './pages/Admin/AddUsers';
+import EditUser from './pages/Admin/EditUsers';
+
+
+import MichuHome from './pages/coopproducts/Michu/MichuHome';
+import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
+import MichuLoan from './pages/coopproducts/Michu/MichuLoan';
+import BalanceQuery from './pages/coopproducts/coopay/CheckBalance';
+import CoopayHome from './pages/coopproducts/coopay/CoopayHome';
+import AccountTransfer from './pages/coopproducts/coopay/AccountTransfer';
+import SendMoney from './pages/coopproducts/coopay/SendMoney';
 
 const App = () => {
+  const isAuthenticated = !!localStorage.getItem('token');
+  const isAdminAuthenticated = !!localStorage.getItem('adminToken'); // For admin authentication
 
-  const isAuthenticated=!!localStorage.getItem('token');
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Home />} />      
+          {/* Public Routes */}
+          <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/Signin" element={<Signin />} />
-          <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
-            <Route path="/forgotpsw" element={<Forgotpsw />} />        
-            <Route path="/checkemail" element={<CheckEmail />} />    
-            <Route path="/resetpsw" element={<ResetPsw />} />        
-            <Route path="/authentication" element={<Authentication/>} />         
-            <Route path="/verifyid" element={<VerifyId />} />
-            <Route path="/Dashboard" element={<Dashboard />}/>
-            <Route path="/Products" element={<Products />} />
-            <Route path="/Notification" element={<Notification />} />
-            <Route exact path="/items" element={<Item />} />
-            <Route path="/michu" element={<Michu />} />
-            <Route path="/apply-loan" element={<LoanApplication />} /> 
-          </Route>
-          
-        </Routes>
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/forgot-password" element={<Forgotpsw />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
 
+          {/* Protected User Routes */}
+          <Route element={<ProtectedRooute isAuthenticated={isAuthenticated} />}>
+            <Route path="/checkemail" element={<CheckEmail />} />
+            <Route path="/resetpsw" element={<ResetPsw />} />
+            <Route path="/authentication" element={<Authentication />} />
+            <Route path="/verifyid" element={<VerifyId />} />
+
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/items" element={<Item />} />
+            <Route path="/michu" element={<MichuHome />} />
+            <Route path="/apply-loan" element={<LoanApplication />} />
+            <Route path="/michu-loan" element={<MichuLoan />} />
+            <Route path="/diaspora-banking" element={<DiasporaBanking />} />
+            <Route path="/profile" element={<Profile />} />
+
+            <Route exact path="/coopay" element={<CoopayHome />} />
+            <Route exact path="/check-balance" element={<BalanceQuery />} />
+            <Route exact path="/transfer-money" element={<AccountTransfer />} />
+            <Route exact path="/send-money" element={<SendMoney />} />
+            
+
+          {/* </Route> */}
+          
+                    </Route>
+
+          {/* Admin Routes (Protected) */}
+          <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/viewusers" element={<ViewUsers />} />
+            <Route path="/view-user-detail/:id" element={<ViewUserDetail />} />
+            
+          </Route>
+        </Routes>
       </div>
     </Router>
   );

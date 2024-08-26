@@ -1,0 +1,26 @@
+.doc-container{
+    text-align: center;
+    padding: 100px 15% 50px 15%;
+}
+.doc-container h1{
+    color: rgb(2, 154, 248);
+}
+.doc-container p{
+    font-size: 1rem;
+    color: grey;
+}
+.doc-products{
+    text-align: center;
+}
+.doc-products img{
+    width: 200px;
+    height: 100px;
+    padding: 50px 20px;
+    transition: all 0.3s;
+    border: none;
+    
+}
+.doc-products img:hover{
+    transform: scale(1.2);
+    border: none;
+}

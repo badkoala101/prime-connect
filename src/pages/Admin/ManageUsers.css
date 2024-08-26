@@ -1,0 +1,75 @@
+.admin-dashboard-container {
+    display: flex;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .show-sidebar-btn {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .show-sidebar-btn img {
+    width: 20px; /* Smaller width to match the hide button */
+    height: 20px;
+  }
+  
+  .show-sidebar-btn.hidden {
+    display: none;
+  }
+  
+  .admin-main-content {
+    margin-left: 15rem;
+    padding: 2rem;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .admin-dashboard-container.sidebar-visible .admin-main-content {
+    margin-left: 15rem;
+  }
+  
+  .admin-dashboard-container:not(.sidebar-visible) .admin-main-content {
+    margin-left: 2rem; /* Adjust this based on your design */
+  }
+  
+  .admin-heading {
+    color: #029af8;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .admin-cube-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .admin-cube {
+    background-color: whitesmoke;
+    border: 1px solid #029af8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-cube:hover {
+    background-color: #e0f3ff;
+  }
+  
+  .admin-cube p {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  

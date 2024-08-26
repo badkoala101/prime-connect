@@ -1,0 +1,137 @@
+.balance-query {
+    text-align: center;
+    /* padding: 40px; */
+    background: linear-gradient(135deg, #f3f4f7, #d7e3fc);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+} 
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    font-size: 1.2rem;
+    color: #007bff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: white; 
+}
+
+.coop-icon {
+    /* width: 1000px; */
+    /* height: 400px; */
+    margin-right: 30px;
+}
+
+
+.balance-container {
+   margin:0 auto;
+   width: 250px;
+}
+
+.balance-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 8px solid #007bff;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    /* position: relative; */
+    z-index: 1;
+}
+
+.balance-circle h2, 
+.balance-circle h3, 
+.balance-circle p {
+    margin: 0;
+    padding: 0;
+    color: #007bff;
+    text-align: center;
+}
+
+.balance-circle h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.balance-circle h3 {
+    font-size: 2rem;
+}
+
+.balance-circle p {
+    font-size: 1rem;
+}
+
+/* .balance-query::before,
+.balance-query::after {
+    content: '';
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.05);
+    z-index: 0;
+}
+
+.balance-query::before {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: -150px;
+    overflow: hidden;
+
+}
+
+.balance-query::after {
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -200px;
+    overflow: hidden;
+
+}
+
+.balance-container::before,
+.balance-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.1);
+    z-index: -1;
+    overflow: hidden;
+
+}
+
+
+.balance-container::before {
+    width: 250px;
+    height: 250px;
+    top: 10px;
+    left: -80px;
+    overflow: hidden;
+
+}
+.balance-container::after {
+    width: 300px;
+    height: 300px;
+    bottom: 10px;
+    right: -100px;
+    transform: rotate(45deg);
+    overflow: hidden;
+
+}  */

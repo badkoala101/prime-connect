@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import './Signin.css';
 import '../user.css';
 import Title from '../title/Title';
-import api from '../../../Api'; // Import your configured axios instance
-
+import api from '../../../Api';
+import google from '../../../assets/google.png';
+import github from '../../../assets/github.svg';
+import facebook from '../../../assets/facebook.png';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [keepSignedIn, setKeepSignedIn] = useState(false);
-  const [message, setMessage] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -32,19 +35,26 @@ const SignIn = () => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    
+    setLoading(true); // Start loading spinner
+
     try {
       const response = await api.post('/login', { email, password });
-      setMessage('Sign in successful!');
-      console.log(response.data);
 
       // Optional: Store token or user data
       localStorage.setItem('token', response.data.token);
 
-      // Redirect to dashboard
-      navigate('/Dashboard');
+      // Show success popup
+      setLoading(false); // Stop loading spinner
+      setShowPopup(true);
+
+      // After a delay, navigate to the dashboard
+      setTimeout(() => {
+        setShowPopup(false);
+        navigate('/Dashboard');
+      }, 2000); // Display the popup for 2 seconds
     } catch (error) {
-      setMessage('Sign in failed: ' + (error.response?.data?.error || 'Unknown error'));
+      setLoading(false); // Stop loading spinner
+      // Optionally handle sign-in failure here
     }
   };
 
@@ -87,18 +97,28 @@ const SignIn = () => {
             </label>
             <a className="link" href="/forgot-password">Forgot password</a>
           </div>
-          <button type="submit" className="sign-in-button">Sign in</button>
+          <button type="submit" className="sign-in-button">
+            {loading ? <div className="spinner"></div> : 'Sign in'}
+          </button>
         </form>
-        {message && <p>{message}</p>}
+
         <div className="third-party-sign-in">
-          <button>Sign in with Google</button>
-          <button>Sign in with GitHub</button>
-          <button>Sign in with Facebook</button>
+          <button>Sign in with Google<img src={google} className="socialicons" alt="google" /></button>
+          <button>Sign in with GitHub<img src={github} className="socialicons" alt="github" /></button>
+          <button>Sign in with Facebook<img src={facebook} className="socialicons" alt="facebook" /></button>
         </div>
         <p className="sign-up-link">
-  Don't have an account? <Link to="/signup">Sign up</Link>
-</p>
+          Don't have an account? <Link to="/signup">Sign up</Link>
+        </p>
       </div>
+
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h3>Signed in successfully!</h3>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
