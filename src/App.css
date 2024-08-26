@@ -375,10 +375,6 @@ body {
 .footer p {
   margin: 0.5rem 0;
 }
-.footer p:hover{
-  color: #007bff;
-  transition: 0.2s ease;
-}
 
 .footer input {
   padding: 0.5rem;
@@ -403,21 +399,3 @@ body {
    height: 40px;  /* Adjust the height as needed  */
    margin-right: 10px;  /*Space between the logo and text  */
 } 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.float {
-  position: relative; /* or absolute if you need precise positioning */
-  z-index: 1; /* Lower z-index to keep it behind the navbar */
-  animation: float 3s ease-in-out infinite;
-}
-
