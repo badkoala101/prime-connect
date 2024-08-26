@@ -9,6 +9,9 @@ const CoopayHome = () => {
     const navigate=useNavigate();
     return (
         <div className="coopay-container">
+            <button className="back-button" onClick={() => navigate('/dashboard')}>
+                    &#8592; Back
+            </button>
             <h1>CooPay Services</h1>
             <div className="cards-container">
                 <div className="card">
