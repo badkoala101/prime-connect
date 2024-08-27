@@ -4,7 +4,6 @@ import api from '../../Api';
 import './VerifyId.css';
 
 const AddressInfo = () => {
-    const [buttonClicked, setbuttonClicked]=useState(false);
     const [addressDetails, setAddressDetails] = useState({
         country: '',
         region: '',
@@ -18,9 +17,7 @@ const AddressInfo = () => {
         address_duration: 'permanent'
     });
 
-    const navigate = useNavigate(); // Hook to manage navigation
-            const personalInfo = localStorage.getItem('personalInfo');
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Removed automatic redirect logic from useEffect
@@ -35,7 +32,6 @@ const AddressInfo = () => {
     };
 
     const handleSubmit = async (e) => {
-        if(personalInfo){
         e.preventDefault();
         try {
             const response = await api.post('/address-info', addressDetails, {
@@ -52,7 +48,6 @@ const AddressInfo = () => {
         } catch (error) {
             console.error('Error saving address details:', error.response?.data?.message || error.message);
         }
-    }
     };
 
     return (
@@ -102,40 +97,38 @@ const AddressInfo = () => {
                                 name="address_type" 
                                 value="residential" 
                                 checked={addressDetails.address_type === 'residential'} 
-                                onChange={handleChange} 
-                            />
-                            Residential
-                        </label>
+                                onChange={handleChange}/>
+                                Residential
+                            </label>
+                        </div>
+                        <div className="address-type-duration">
+                            <p>Address Duration</p>
+                            <label>
+                                <input 
+                                    type="radio" 
+                                    name="address_duration" 
+                                    value="permanent" 
+                                    checked={addressDetails.address_duration === 'permanent'} 
+                                    onChange={handleChange} 
+                                />
+                                Permanent
+                            </label>
+                            <label>
+                                <input 
+                                    type="radio" 
+                                    name="address_duration" 
+                                    value="temporary" 
+                                    checked={addressDetails.address_duration === 'temporary'} 
+                                    onChange={handleChange} 
+                                />
+                                Temporary
+                            </label>
+                        </div>
                     </div>
-                    <div className="address-type-duration">
-                        <p>Address Duration</p>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="address_duration" 
-                                value="permanent" 
-                                checked={addressDetails.address_duration === 'permanent'} 
-                                onChange={handleChange} 
-                            />
-                            Permanent
-                        </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="address_duration" 
-                                value="temporary" 
-                                checked={addressDetails.address_duration === 'temporary'} 
-                                onChange={handleChange} 
-                            />
-                            Temporary
-                        </label>
-                    </div>
-                </div>
-                <button onClick={()=>{setbuttonClicked(true)} }type="submit">Save changes</button>
-                {buttonClicked && <div className='error'>Fillout personalInfo fist</div>}
-            </form>
-        </div>
-    );
-};
-
-export default AddressInfo;
+                    <button type="submit">Save changes</button>
+                </form>
+            </div>
+        );
+    };
+    
+    export default AddressInfo;

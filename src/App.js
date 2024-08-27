@@ -25,9 +25,7 @@ import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminLogin from './pages/Admin/AdminLogin';
 import ViewUsers from './pages/Admin/ViewUsers';
 import ViewUserDetail from './pages/Admin/ViewUserDetail';
-import AddUser from './pages/Admin/AddUsers';
-import EditUser from './pages/Admin/EditUsers';
-
+import ManageLoanApplication from './pages/Admin/ManageLoanApplication';
 
 import MichuHome from './pages/coopproducts/Michu/MichuHome';
 import LoanApplication from './pages/coopproducts/Michu/LoanApplication';
@@ -90,6 +88,7 @@ const App = () => {
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/viewusers" element={<ViewUsers />} />
             <Route path="/view-user-detail/:id" element={<ViewUserDetail />} />
+            <Route path="/manage-loan-application" element={<ManageLoanApplication />} />
             
           {/* </Route> */}
         </Routes>
