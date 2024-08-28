@@ -94,3 +94,13 @@
 .admins-auth p {
   text-align: center; /* Center the text within the paragraph */
 }
+.admin-dashboard-charts {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; /* Adjust the spacing between charts as needed */
+  margin-bottom: 20px;
+}
+
+.admin-dashboard-charts > div {
+  flex: 1;
+}
