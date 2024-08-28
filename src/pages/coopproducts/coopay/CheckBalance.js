@@ -1,62 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../../Api'; // Replace with your API utility path
 import './CheckBalance.css';
-import { Navigate, useNavigate } from 'react-router-dom';
-import coopIcon from '../../../assets/coopayroll.png'; 
-
+import { useNavigate } from 'react-router-dom';
+import coopIcon from '../../../assets/coopayroll.png';
 
 const BalanceQuery = () => {
-    const navigate=useNavigate();
-    const [balance, setBalance] = useState(89087);
-    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const [balance, setBalance] = useState(null);
+    const [loading, setLoading] = useState(true); // Set loading to true initially
     const [error, setError] = useState(null);
 
-    // useEffect(() => {
-    //     const fetchBalance = async () => {
-    //         try {
-    //             const response = await api.get('/balance', {
-    //                 headers: {
-    //                     'Authorization': `Bearer ${localStorage.getItem('user')}`,
-    //                 }
-    //             });
-                // setBalance(10);
-    //             setLoading(false);
-    //         } catch (err) {
-    //             setError(localStorage.getItem('token'));
-    //             setLoading(false);
-    //             console.log(err);
-    //         }
-
-    //     };
-
-    //     fetchBalance();
-    // }, []);
     const fetchBalance = async () => {
+        setLoading(true); // Start loading when the fetch begins
         try {
-          const response = await api.get('/balance', {
-            headers: {
-              'Authorization': `Bearer ${localStorage.getItem('token')}`,
-            },
-          });
-          if (response.status === 200) {
-            setBalance(response.data);
-            setLoading(false);
-          } else {
-            throw new Error('Failed to fetch notifications');
-            setLoading(false);
-
-          }
+            const response = await api.get('/balance', {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+            });
+            if (response.status === 200 && response.data && response.data.balance !== undefined) {
+                setBalance(response.data.balance);
+            } else {
+                setError('Failed to fetch balance');
+            }
         } catch (error) {
-          setError('Error fetching : ' + (error.response?.data?.message || error.message));
-          console.error('Error fetching :', error);
-          setLoading(false);
-
+            setError('Error fetching balance: ' + (error.response?.data?.message || error.message));
+            console.error('Error fetching balance:', error);
+        } finally {
+            setLoading(false); // Stop loading after the fetch completes
         }
-      };
-    
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         fetchBalance();
-      }, []);
+    }, []);
+
     return (
         <div className="balance-query">
             <div className="header">
@@ -68,14 +46,18 @@ const BalanceQuery = () => {
 
             <div className="balance-container">
                 <div className="balance-circle">
-                    {loading ? ( <p>Loading...</p>) : error ? (<p>{error}</p> ) : balance !== null ? (
+                    {loading ? (
+                        <p>Loading...</p>
+                    ) : error ? (
+                        <p>{error}</p>
+                    ) : balance !== null ? (
                         <>
                             <h2>Your Bank Balance</h2>
-                           <h3>${balance}</h3> 
-                        </>)
-                   : (
+                            <h3>${balance}</h3>
+                        </>
+                    ) : (
                         <p>Balance information is not available at the moment.</p>
-                    ) }
+                    )}
                 </div>
             </div>
         </div>
