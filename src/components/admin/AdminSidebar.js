@@ -63,11 +63,6 @@ function AdminSidebar({ isVisible, toggleSidebar }) {
                   Manage Loan Application
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/view-loan-application" className="dropdown-link">
-                  View Loan Application
-                </NavLink>
-              </li>
             </ul>
           )}
         </li>

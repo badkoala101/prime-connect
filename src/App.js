@@ -22,6 +22,7 @@ import Documentation from './pages/Documentation';
 import Profile from './pages/Profile';
 import Souqpass from './pages/coopproducts/Souqpass';
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import ManageUsers from './pages/Admin/ManageUsers';
 import AdminLogin from './pages/Admin/AdminLogin';
 import ViewUsers from './pages/Admin/ViewUsers';
 import ViewUserDetail from './pages/Admin/ViewUserDetail';
@@ -96,6 +97,7 @@ const App = () => {
           {/* Admin Routes (Protected) */}
           {/* <Route element={<ProtectedRooute isAuthenticated={isAdminAuthenticated} />}> */}
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/manage-users" element={<ManageUsers />} />
             <Route path="/viewusers" element={<ViewUsers />} />
             <Route path="/view-user-detail/:id" element={<ViewUserDetail />} />
             <Route path="/manage-loan-application" element={<ManageLoanApplication />} />
