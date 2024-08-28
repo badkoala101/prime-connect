@@ -1,106 +1,123 @@
 .manage-loan-container {
-    display: flex;
-    flex-grow: 1;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    margin-left: 250px; /* Adjust based on your sidebar width */
-    padding: 20px;
-    background-color: white;
-    transition: margin-left 0.3s ease;
-    overflow-y: auto;
-  }
-  
-  .main-content.full-width {
-    margin-left: 0;
-    transition: margin-left 0.3s ease;
-  }
-  
-  .sidebar-show-button img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .sidebar-show-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    font-size: 15px;
-    z-index: 1000;
-  }
-  
-  .manage-loan-content {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .manage-loan-content h2 {
-    font-size: 1.8em;
-    color: #007bff;
-    margin-bottom: 20px;
-  }
-  
-  .manage-loan-content .error-message,
-  .manage-loan-content .status-update-message {
-    color: red;
-    margin-bottom: 20px;
-  }
-  
-  .manage-loan-content .status-update-message {
-    color: green;
-  }
-  
-  .manage-loan-content table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .manage-loan-content table th, 
-  .manage-loan-content table td {
-    border: none;
-    border-bottom: 1px solid lightgray;
-    padding: 12px;
-    text-align: left;
-    font-size: 14px;
-  }
-  
-  .manage-loan-content table th {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    padding: 10px 5px;
-    text-align: center;
-  }
-  
-  .manage-loan-content table td {
-    font-size: 14px;
-    text-align: center;
-  }
-  
-  .manage-loan-content table td:last-child {
-    text-align: center;
-  }
-  
-  .manage-loan-content button {
-    padding: 5px 10px;
-    margin: 0 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .manage-loan-content button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  flex-grow: 1;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 250px; /* Adjust based on your sidebar width */
+  padding: 20px;
+  background-color: white;
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+}
+
+.main-content.full-width {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-show-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-show-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  z-index: 1000;
+}
+
+.manage-loan-content {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.manage-loan-content h2 {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.manage-loan-content .error-message {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.manage-loan-content .popup-message {
+  color: green;
+  margin-bottom: 20px;
+  background-color: #e0f7e0;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.manage-loan-content table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manage-loan-content table th, 
+.manage-loan-content table td {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.manage-loan-content table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.manage-loan-content table td {
+  font-size: 14px;
+  text-align: center;
+}
+
+.manage-loan-content table td:last-child {
+  text-align: center;
+}
+
+.manage-loan-content .approve-btn,
+.manage-loan-content .reject-btn {
+  padding: 5px 20px;
+  margin-bottom: 15px; /* Adds space between the buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.manage-loan-content .approve-btn {
+  background-color: #28a745; /* Green for Approve */
+}
+
+.manage-loan-content .reject-btn {
+  background-color: #dc3545; /* Red for Reject */
+}
+
+.manage-loan-content .approve-btn:hover {
+  background-color: #218838;
+}
+
+.manage-loan-content .reject-btn:hover {
+  background-color: #c82333;
+}

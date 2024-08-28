@@ -42,6 +42,7 @@ const ManageLoanApplication = () => {
       if (response.status === 200) {
         setLoans(loans.map(loan => loan.id === loanId ? { ...loan, status: newStatus } : loan));
         setStatusUpdate(`Loan status updated to "${newStatus}" successfully!`);
+        setTimeout(() => setStatusUpdate(''), 3000); // Popup message disappears after 3 seconds
       } else {
         throw new Error('Failed to update loan status');
       }
@@ -67,7 +68,7 @@ const ManageLoanApplication = () => {
         <div className="manage-loan-content">
           <h2>Manage Loan Applications</h2>
           {error && <p className="error-message">{error}</p>}
-          {statusUpdate && <p className="status-update-message">{statusUpdate}</p>}
+          {statusUpdate && <div className="popup-message">{statusUpdate}</div>}
           <table>
             <thead>
               <tr>
@@ -95,8 +96,8 @@ const ManageLoanApplication = () => {
                     <td>{loan.loan_amount}</td>
                     <td>{loan.status}</td>
                     <td>
-                      <button onClick={() => handleStatusChange(loan.id, 'approved')}>Approve</button>
-                      <button onClick={() => handleStatusChange(loan.id, 'rejected')}>Reject</button>
+                      <button className="approve-btn" onClick={() => handleStatusChange(loan.id, 'approved')}>Approve</button>
+                      <button className="reject-btn" onClick={() => handleStatusChange(loan.id, 'rejected')}>Reject</button>
                     </td>
                   </tr>
                 ))
