@@ -1,113 +1,161 @@
+/* Michu-loan.css */
+
 .michu-page-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f0f8ff;
-    margin-top: 100px;
-  }
-  
-  .michu-page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .michu-logo {
-    max-width: 50px;
-    height: auto;
-  }
-  
-  .michu-page-header h1 {
-    font-size: 1.8em;
-    color: #007bff;
-  }
-  
-  .offer-box {
-    background-color: #69d8fd;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .offer-box h2 {
-    font-size: 1.5em;
-  }
-  
-  .offer-box .amount {
-    font-size: 2em;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 10px;
-    margin-top: -15px;
-  }
-  
-  .amount-input {
-    padding: 13px;
-    width: 90%;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #ffffff;
-    outline: none;
-  }
-  
-  .offer-detail-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .detail-box {
-    background-color: #ffffff;
-    padding: 0 15px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-  }
-  .detail-left p, .detail-right p{
-      margin: 13px;
-  }
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f0f8ff;
+  margin-top: 100px;
+}
 
+.michu-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .detail-left, .detail-right {
-    text-align: left;
-  }
-  
-  .bold {
-    font-weight: bold;
-    font-size: 1.2em;
-  }
-  
-  .michu-page-buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .next-button, .reject-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .next-button {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .reject-button {
-    background-color: #ff4d4d;
-    color: white;
-  }
-  
-  .next-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .reject-button:hover {
-    background-color: #cc0000;
-  }
-  
+.michu-logo {
+  max-width: 50px;
+  height: auto;
+}
+
+.michu-page-header h1 {
+  font-size: 1.8em;
+  color: #007bff;
+}
+
+.offer-box {
+  background-color: #69d8fd;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.offer-box h2 {
+  font-size: 1.5em;
+}
+
+.offer-box .amount {
+  font-size: 2em;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+  margin-top: -15px;
+}
+
+.amount-input {
+  padding: 13px;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.offer-detail-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.detail-box {
+  background-color: #ffffff;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.detail-left p, .detail-right p {
+  margin: 13px;
+}
+
+.detail-left, .detail-right {
+  text-align: left;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.michu-page-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-button, .reject-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.next-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.reject-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.next-button:hover {
+  background-color: #0056b3;
+}
+
+.reject-button:hover {
+  background-color: #cc0000;
+}
+
+/* Updated Pop-up message styling */
+.loan-popup-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.loan-popup-content {
+  padding: 20px;
+}
+
+.loan-popup-content h2 {
+  font-size: 1.5em;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.loan-popup-content p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.loan-popup-button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loan-popup-button:hover {
+  background-color: #0056b3;
+}
