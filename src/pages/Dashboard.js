@@ -35,7 +35,7 @@ function Dashboard() {
             </Link>
             <Link to="/coopay">
               <img src={Coopayroll} alt='CooPayRoll' />
-           
+            </Link>
             <Link to='/deboo'>
               <img src={Deboo} alt='Deboo' />
             </Link>
