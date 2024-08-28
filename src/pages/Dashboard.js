@@ -36,9 +36,9 @@ function Dashboard() {
             
               <img src={Coopayroll} alt='CooPayRoll' />
            
-            
+            <Link to='/deboo'>
               <img src={Deboo} alt='Deboo' />
-            
+            </Link>
        
             <Link to="/souqpass">
               <img src={Souqpass} alt='Souqpass' />

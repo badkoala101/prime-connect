@@ -1,0 +1,82 @@
+.deboo_navbar {
+    background-color: whitesmoke;
+    padding: 20px;
+    color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px gainsboro;
+    height: 70px;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+}
+
+.deboo_img{
+    height: 50px;
+    width: 150px;
+}
+.back-to{
+    margin: 10px;
+}
+.deboo-back{
+    
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+}
+.deboo-back:hover{
+    background-color: #007bff;
+    transition: 0.2s ease;
+}
+.deboo-back {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+    
+}
+.deboo-back:hover{
+    color: white;
+    
+}
+.deboo_navbar ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 20px;
+    text-align: center;
+}
+.deboo_navbar ul li{
+    position: relative;
+    padding: 10px;
+}
+
+.deboo_navbar ul li a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 20px;
+    text-align: center;
+}
+.deboo_navbar li a:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 4px;
+}
+.deboo_navbar li a::after {
+    content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #007bff;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+.deboo_navbar li a:hover::after {
+    width: 100%;
+    left: 0;
+}

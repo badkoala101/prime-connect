@@ -37,6 +37,10 @@ import CoopayHome from './pages/coopproducts/coopay/CoopayHome';
 import AccountTransfer from './pages/coopproducts/coopay/AccountTransfer';
 import SendMoney from './pages/coopproducts/coopay/SendMoney';
 import LoanDashboard from './pages/coopproducts/Michu/LoanDashboard';
+import DebooHome from './pages/coopproducts/Deboo/DebooHome';
+import DebooCampaign from './pages/coopproducts/Deboo/DebooCampaign';
+import DebooDashboard from './pages/coopproducts/Deboo/DebooDashboard';
+import DebooContribute from './pages/coopproducts/Deboo/DebooContribute';
 
 const App = () => {
   const isAuthenticated = !!localStorage.getItem('token');
@@ -78,6 +82,11 @@ const App = () => {
             <Route exact path="/transfer-money" element={<AccountTransfer />} />
             <Route exact path="/send-money" element={<SendMoney />} />
             
+            <Route path="/deboo" element={<DebooHome />} />
+            <Route path="/deboo-campaign" element={<DebooCampaign />} />
+            <Route path="/deboo-dashboard" element={<DebooDashboard />} />
+            <Route path="/deboo-contribute" element={<DebooContribute />} />
+
 
           {/* </Route> */}
           

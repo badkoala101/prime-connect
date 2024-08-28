@@ -1,0 +1,24 @@
+.contribution-main{
+    margin-top: 80px;
+}
+.contribute-to-campaign h2{
+    color: #007bff;
+    margin: 20px;
+}
+.contribute-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 20px;
+  }
+  
+  
+  .contribute-table th, .contribute-table td {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }

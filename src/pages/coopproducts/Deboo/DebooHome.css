@@ -1,0 +1,106 @@
+.deboo-main{
+    margin-top: 80px;
+}
+.deboo-container{
+    padding: 20px;
+    max-width: 100%; 
+    overflow: hidden;
+}
+.deboo-header{
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.deboo-header h1 {
+    font-size: 60px;
+}
+  
+.deboo-image img{
+    width: 100%;
+    border-radius: 10px;
+}
+.deboo-image2 img{
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+}
+  
+  .deboo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+
+  .subtitle{
+    width: 60%;
+    margin: auto; 
+  }
+  
+  .deboo-des-img {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  
+  .deboo-des {
+    flex: 1;
+    text-align: left;
+    margin-right: 3px;
+    padding: 5px 25px;
+    font-size: 20px;
+    border-radius:15px;
+    line-height: 25px;
+    }
+  
+  .deboo-image {
+    flex: 1;
+    text-align: right;
+    width: 40%;
+
+  }
+  .deboo-image2{
+    flex: 1;
+    text-align: right;
+    width: 40%;
+  }
+
+  .deboo-show-Button  {
+    border: none; 
+    margin-left: 575px;
+  }
+  
+  .deboo-show-Button:hover{
+    color: #007bff;
+    
+    cursor: pointer;
+    
+  }
+  
+    
+    .deboo-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .go-for-it-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .go-for-it-btn:hover {
+      background-color: #0056b3;
+    }
+.deboo-mission{
+    text-align: center;
+    margin: 20px 5px 0 5px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    background-color: rgb(221, 227, 230);
+}
