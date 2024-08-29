@@ -9,7 +9,7 @@ import './Notification.css';
 const Notification = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [notifications, setNotifications] = useState([]);
-  const [activeTab, setActiveTab] = useState('All'); // Added state for active tab
+  const [activeTab, setActiveTab] = useState('All');
   const [error, setError] = useState(null);
 
   const toggleSidebar = () => {
@@ -46,7 +46,7 @@ const Notification = () => {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      
+
       if (response.status === 200) {
         setNotifications(notifications.map(notification =>
           notification.id === id ? { ...notification, favorite: !isFavorite } : notification
@@ -59,7 +59,27 @@ const Notification = () => {
       console.error('Error updating notification:', error);
     }
   };
-  
+
+  const handleArchive = async (id, isArchived) => {
+    try {
+      const response = await api.patch(`/notifications/${id}/archive`, { archived: !isArchived }, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      if (response.status === 200) {
+        setNotifications(notifications.map(notification =>
+          notification.id === id ? { ...notification, archived: !isArchived } : notification
+        ));
+      } else {
+        throw new Error('Failed to update archive status');
+      }
+    } catch (error) {
+      setError('Error updating notification: ' + (error.response?.data?.message || error.message));
+      console.error('Error updating notification:', error);
+    }
+  };
 
   const handleDelete = async (id) => {
     try {
@@ -91,11 +111,15 @@ const Notification = () => {
     }
   };
 
-  // Filter notifications based on active tab
+  // Filter notifications based on the active tab
   const filteredNotifications = notifications.filter(notification => {
     if (activeTab === 'Favorite') {
-      return notification.favorite;
-    } 
+        return notification.favorite;
+    } else if (activeTab === 'Archived') {
+        return notification.archived;
+    } else if (activeTab === 'All') {
+        return !notification.archived; // Exclude archived notifications from the "All" tab
+    }
     return true;
   });
 
@@ -157,7 +181,15 @@ const Notification = () => {
                           {notification.message} {!notification.read && <span style={{ color: 'red', marginLeft: '5px' }}>New</span>}
                         </td>
                         <td>
-                          <button onClick={() => handleDelete(notification.id)} style={{ color: 'red' }}>
+                          <button 
+                            className="archive-button" 
+                            onClick={() => handleArchive(notification.id, notification.archived)}
+                          >
+                            {notification.archived ? 'Remove from Archive' : 'Archive'}
+                          </button>
+                        </td>
+                        <td>
+                          <button className="delete-button" onClick={() => handleDelete(notification.id)} style={{ color: 'red' }}>
                             Delete
                           </button>
                         </td>
